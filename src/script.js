@@ -20,21 +20,22 @@ function currentSlide(n) {
 }
 
 /* Основная функция слайдера */
-function showSlides(n) {
-    let i;
+function showSlides(number) {
     let slides = document.getElementsByClassName("item");
+    console.log(slides)
     let dots = document.getElementsByClassName("slider-dots_item");
-    if (n > slides.length) {
+    console.log(dots)
+    if (number > slides.length) {
       slideIndex = 1
     }
-    if (n < 1) {
+    if (number < 1) {
         slideIndex = slides.length
     }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+    for (let index = 0; index < slides.length; index++) {
+        slides[index].style.display = "none";
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+    for (let index = 0; index < dots.length; index++) {
+        dots[index].className = dots[index].className.replace(" active", "");
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
