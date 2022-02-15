@@ -1,6 +1,6 @@
 import { getUUID } from "./utils.js";
 
-const main = document.querySelector(".main");
+const containerCard = document.querySelector("#container-card");
 
 function createElement(tag, className, text = "") {
   const element = document.createElement(tag);
@@ -36,4 +36,4 @@ function createCard(todo) {
   return card;
 }
 
-export { main, createCard };
+export { containerCard, createCard };

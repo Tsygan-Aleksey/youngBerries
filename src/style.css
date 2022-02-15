@@ -1,4 +1,4 @@
-.main {
+#container-card {
   display: flex;
 }
 .card {
@@ -85,7 +85,7 @@
   color: black;
 }
 .loop-action button:hover:after {
-  left: 0%;
+  left: 0;
 }
 .border:hover {
   border-color: #4966a2;
