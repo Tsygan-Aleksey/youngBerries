@@ -14,7 +14,7 @@
         <button class="header__button-loupe">Поиск
             <img class="loupe-images" src="/src/images/catalog/header/search-icon.png" alt="">
         </button>
-        <button class="header__button-basket">Корзина</button>
+        <button id="modal-basket" class="header__button-basket">Корзина</button>
     </header>
 <main class="main">
     <div id="slider">
@@ -50,7 +50,20 @@
             <span class="slider-dots_item" onclick="currentSlide(5)"></span>
         </div>
     </div>
+    <p class="bestseller">Хиты продаж:</p>
     <div id="container-card"></div>
+    <div id="modal-basket-product" class="modal-basket-product">
+        <div class="modal-wrap">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title">Корзина</h3>
+                    <button id="delete-basket" class="modal-loop-add-basket-card">Очистить корзину</button>
+                </div>
+                <div id="basket-product" class="basket-product"></div>
+                <p>Итого: </p>
+            </div>
+        </div>
+    </div>
 </main>
 </body>
 </html>

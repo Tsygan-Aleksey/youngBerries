@@ -1,5 +1,3 @@
-import { getUUID } from "./utils.js";
-
 const containerCard = document.querySelector("#container-card");
 
 function createElement(tag, className, text = "") {
@@ -12,7 +10,7 @@ function createElement(tag, className, text = "") {
 
 function createCard(todo) {
   const card = createElement("div", "card");
-  card.id = getUUID();
+  card.id = todo.id;
   const wrap = createElement("div", "wrap");
   const productWrap = createElement("div", "product-wrap");
   const productImages = createElement("img", "");
@@ -20,20 +18,60 @@ function createCard(todo) {
   const loopAction = createElement("div", "loop-action");
   const buttonReview = createElement(
     "button",
-    "add-to-card",
+    "loop-quick-view",
     "Быстрый просмотр"
   );
-  const buttonBasket = createElement("button", "loop-add-to-cart", "В корзину");
   const productInfo = createElement("div", "product-info");
   const productTitle = createElement("h3", "product-title", todo.text);
   const productPrice = createElement("div", "price", todo.price);
-
+  const buttonBasket = createElement(
+    "button",
+    "loop-add-basket-card",
+    "В корзину"
+  );
   productWrap.append(productImages);
-  loopAction.append(buttonReview, buttonBasket);
+  loopAction.append(buttonReview);
   productInfo.append(productTitle, productPrice);
-  wrap.append(productWrap, loopAction, productInfo);
+  wrap.append(productWrap, loopAction, productInfo, buttonBasket);
+
   card.append(wrap);
   return card;
 }
 
-export { containerCard, createCard };
+function createModalCard(todo) {
+  const card = createElement("div", "big-card");
+  card.id = todo.id;
+  const wrap = createElement("div", "big-wrap");
+  const content = createElement("div", "big-content");
+  const buttonClose = createElement("button", "button-close", "x");
+  const productImages = createElement("img", "");
+  productImages.src = todo.src;
+  const productTitle = createElement("h3", "big-product-title", todo.text);
+  const productPrice = createElement("div", "big-price", todo.price);
+  const buttonBasket = createElement(
+    "button",
+    "big-loop-add-basket-card",
+    "В корзину"
+  );
+  content.append(
+    buttonClose,
+    productTitle,
+    productPrice,
+    productImages,
+    buttonBasket
+  );
+  wrap.append(content);
+  card.append(wrap);
+  return card;
+}
+
+function createModalBasket(todo) {
+  const product = createElement("div", "product");
+  const productTitle = createElement("h3", "modal-product-title", todo.text);
+  const productPrice = createElement("div", "modal-price", todo.price);
+
+  product.append(productTitle, productPrice);
+  return product;
+}
+
+export { containerCard, createCard, createModalCard, createModalBasket };
