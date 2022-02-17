@@ -1,12 +1,34 @@
 import { getUUID } from "./utils.js";
-import { containerCard, createCard } from "./templates.js";
+import {
+  containerCard,
+  createCard,
+  createModalCard,
+  createModalBasket,
+} from "./templates.js";
+import {
+  getStorageData,
+  setStorageData,
+  WILDBERRIES_BASKET_KEY,
+} from "./localStorageApi.js";
 
 const CATALOG = [
+  {
+    text: "МедЗащита / Маски",
+    price: "3$",
+    id: getUUID(),
+    src: "images/catalog/catalog-product-3.png",
+  },
   {
     text: "Honor / Умный браслет Band",
     price: "25$",
     id: getUUID(),
     src: "images/catalog/catalog-product-1.jpeg",
+  },
+  {
+    text: "МедЗащита / Маски",
+    price: "3$",
+    id: getUUID(),
+    src: "images/catalog/catalog-product-3.png",
   },
   {
     text: "Scarlett / Блендер SC-HB42F81",
@@ -28,38 +50,129 @@ const addProduct = function () {
     containerCard.append(section);
   });
 };
-
 addProduct();
+
+const btnBasketCard = document.querySelector("#container-card");
+btnBasketCard.addEventListener("click", onCard);
+
+function onCard(event) {
+  switch (event.target.className) {
+    case "loop-add-basket-card":
+      creatBasketCard();
+      break;
+    case "loop-quick-view":
+      creatBigCard();
+      break;
+  }
+}
+
+function creatBasketCard() {
+  const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+  const ourCard = CATALOG.find((card) => {
+    return (
+      card.text ===
+      event.target.previousElementSibling.firstElementChild.textContent
+    );
+  });
+  basket.push(ourCard);
+  setStorageData(WILDBERRIES_BASKET_KEY, basket);
+  basketProduct.innerHTML = "";
+  basket.forEach((item) => {
+    const section = createModalBasket(item);
+    basketProduct.append(section);
+  });
+}
+
+function creatBigCard() {
+  const ourCard = CATALOG.find((card) => {
+    return (
+      card.text ===
+      event.target.parentElement.nextElementSibling.firstElementChild
+        .textContent
+    );
+  });
+  const section = createModalCard(ourCard);
+  containerCard.append(section);
+  // Закрыть карточку
+  const buttonClose = document.querySelector(".button-close");
+  buttonClose.addEventListener("click", onCloseButton);
+
+  function onCloseButton() {
+    document.querySelector(".big-card").remove();
+  }
+  // Добавить в корзину из большой карточки
+  const buttonAddBasket = document.querySelector(".big-loop-add-basket-card");
+  buttonAddBasket.addEventListener("click", onBasketButton);
+
+  function onBasketButton() {
+    const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+    basket.push(ourCard);
+    setStorageData(WILDBERRIES_BASKET_KEY, basket);
+    basketProduct.innerHTML = "";
+    basket.forEach((item) => {
+      const section = createModalBasket(item);
+      basketProduct.append(section);
+    });
+  }
+}
+
+const modalBasket = document.querySelector("#modal-basket");
+modalBasket.addEventListener("click", onModalBasket);
+
+const basketProduct = document.querySelector("#basket-product");
+const modalBasketProduct = document.querySelector("#modal-basket-product");
+
+function onModalBasket() {
+  basketProduct.innerHTML = "";
+  modalBasketProduct.classList.toggle("display-block");
+  const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+  basket.forEach((item) => {
+    const section = createModalBasket(item);
+    basketProduct.append(section);
+  });
+}
+
+const btnDeleteBasket = document.querySelector("#delete-basket");
+btnDeleteBasket.addEventListener("click", onDeletBasket);
+
+function onDeletBasket() {
+  const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+  basket.length = 0;
+  basketProduct.innerHTML = "";
+  setStorageData(WILDBERRIES_BASKET_KEY, basket);
+}
+
+// ------------------------------------------- SLIDER -------------------------------------------
 
 let slideIndex = 1;
 showSlides(slideIndex);
 
 /* Функция увеличивает индекс на 1, показывает следующй слайд*/
 function plusSlide() {
-  showSlides(slideIndex += 1);
+  showSlides((slideIndex += 1));
 }
 
 /* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
 function minusSlide() {
-  showSlides(slideIndex -= 1);
+  showSlides((slideIndex -= 1));
 }
 
 /* Устанавливает текущий слайд */
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+  showSlides((slideIndex = n));
 }
 
 /* Основная функция слайдера */
 function showSlides(number) {
   let slides = document.getElementsByClassName("item");
-  console.log(slides)
+  console.log(slides);
   let dots = document.getElementsByClassName("slider-dots_item");
-  console.log(dots)
+  console.log(dots);
   if (number > slides.length) {
-    slideIndex = 1
+    slideIndex = 1;
   }
   if (number < 1) {
-    slideIndex = slides.length
+    slideIndex = slides.length;
   }
   for (let index = 0; index < slides.length; index++) {
     slides[index].style.display = "none";
@@ -70,3 +183,5 @@ function showSlides(number) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+export { CATALOG };
