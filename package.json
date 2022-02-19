@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/Tsygan-Aleksey/youngBerries/issues"
   },
-  "homepage": "https://github.com/Tsygan-Aleksey/youngBerries#readme"
+  "homepage": "https://github.com/Tsygan-Aleksey/youngBerries#readme",
+  "devDependencies": {
+    "sass": "^1.49.8"
+  }
 }
