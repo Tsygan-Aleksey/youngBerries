@@ -1,0 +1,264 @@
+.root-app {
+  max-width: 1400px;
+  height: 100%;
+  margin: 0 auto;
+}
+/*---------------------------------- Карточки ----------------------------------*/
+.card {
+  height: 100%;
+  position: relative;
+}
+.card__main {
+  position: relative;
+}
+.card__images {
+  border-radius: 2%;
+}
+.card__review {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease-in-out;
+}
+.card:hover .card__review {
+  opacity: 1;
+}
+.card__quick-view {
+  border: 1px solid white;
+  border-radius: 50px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  font-size: 14px;
+  line-height: 1.6;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  color: rgba(73, 102, 162, 0.5);
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+.card__quick-view:hover {
+  color: black;
+}
+.card__basket {
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  border: 1px solid #e77cd5;
+  border-radius: 50px;
+  padding: 0.2em 1em;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #e77cd5;
+}
+
+/*---------------------------------- Модальное окно карточки ----------------------------------*/
+.modal-card {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-card__content {
+  background-color: rgb(240, 249, 255);
+  color: #000;
+  max-width: 30%;
+  position: relative;
+  padding: 10px;
+}
+.madal-card__images {
+  padding: 50px;
+}
+.modal-card__basket:hover {
+  color: black;
+}
+.modal-card__close-button:hover {
+  color: black;
+}
+.modal-card__close-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  cursor: pointer;
+  font-size: 16px;
+  border: solid 1px #e77cd5;
+  background-color: #e77cd5;
+}
+
+/*---------------------------------- Basket ----------------------------------*/
+
+.basket-modal__container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  min-width: 20%;
+}
+.basket-modal__content {
+  background-color: rgb(240, 249, 255);
+  color: #000;
+  position: relative;
+  padding: 20px;
+}
+.basket-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px #e77cd5;
+}
+.basket-modal__product {
+  margin-bottom: 20px;
+}
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.basket-item__title {
+  margin-right: 20px;
+}
+.display-block {
+  display: block;
+}
+
+/*---------------------------------- Grid ----------------------------------*/
+
+@media (min-width: 768px) {
+  .grid {
+    min-height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+
+    padding: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid {
+    min-height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 30px;
+
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .grid {
+    min-height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 30px;
+
+    padding: 20px;
+  }
+}
+
+/* ------------------------------------------   СЛАЙДЕР   ------------------------------------------ */
+.slider {
+  max-width: 90%;
+  position: relative;
+  margin: 0 auto;
+  height: 300px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+  object-fit: cover;
+  width: 100%;
+  height: 300px;
+  border: 0 solid #7922cc;
+  border-radius: 25px;
+}
+/* Кнопки вперед и назад */
+.slider .prev,
+.slider .next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  color: rgb(206, 31, 206);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.slider .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+/* Кружочки */
+.slider-dots {
+  text-align: center;
+  margin-top: 15px;
+}
+.slider-dots_item {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+  background-color: rgb(206, 31, 206);
+  width: 15px;
+  height: 15px;
+}
+/* Анимация слайдов */
+.slider .item {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
