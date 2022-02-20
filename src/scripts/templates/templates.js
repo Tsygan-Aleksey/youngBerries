@@ -41,7 +41,7 @@ function createModalCard(todo) {
   const cardContent = createElement("div", "modal-card__content");
   const closeButton = createElement("button", "modal-card__close-button", "✕");
   closeButton.id = "modal-card__close-btn";
-  const cardImages = createElement("img", "madal-card__images");
+  const cardImages = createElement("img", "modal-card__images");
   cardImages.src = todo.src;
   const cardTitle = createElement("h3", "modal-card__title", todo.text);
   const cardPrice = createElement("div", "modal-card__price", todo.price);
