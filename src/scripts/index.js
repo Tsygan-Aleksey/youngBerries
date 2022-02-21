@@ -62,14 +62,18 @@ function createBigCard() {
   const section = createModalCard(ourCard);
   containerCard.append(section);
   // Закрыть карточку
-  const buttonClose = document.querySelector("#modal-card__close-btn");
+  const buttonClose = document.querySelector(
+    "#quick-view-modal-window__close-btn"
+  );
   buttonClose.addEventListener("click", onCloseButton);
 
   function onCloseButton() {
-    document.querySelector(".modal-card").remove();
+    document.querySelector(".quick-view-modal-window").remove();
   }
   // Добавить в корзину из большой карточки
-  const buttonAddBasket = document.querySelector("#modal-card-basket");
+  const buttonAddBasket = document.querySelector(
+    "#quick-view-modal-window-basket"
+  );
   buttonAddBasket.addEventListener("click", onBasketButton);
 
   function onBasketButton() {
