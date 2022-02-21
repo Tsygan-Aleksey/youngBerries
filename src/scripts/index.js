@@ -1,48 +1,15 @@
-import { getUUID } from "./utils.js";
 import {
   containerCard,
   createCard,
   createModalCard,
-  createModalBasket,
-} from "./templates.js";
+  createBasket,
+} from "./templates/templates.js";
 import {
   getStorageData,
   setStorageData,
-  WILDBERRIES_BASKET_KEY,
-} from "./localStorageApi.js";
-
-const CATALOG = [
-  {
-    text: "МедЗащита / Маски",
-    price: "3$",
-    id: getUUID(),
-    src: "images/catalog/catalog-product-3.png",
-  },
-  {
-    text: "Honor / Умный браслет Band",
-    price: "25$",
-    id: getUUID(),
-    src: "images/catalog/catalog-product-1.jpeg",
-  },
-  {
-    text: "МедЗащита / Маски",
-    price: "3$",
-    id: getUUID(),
-    src: "images/catalog/catalog-product-3.png",
-  },
-  {
-    text: "Scarlett / Блендер SC-HB42F81",
-    price: "40$",
-    id: getUUID(),
-    src: "images/catalog/catalog-product-2.png",
-  },
-  {
-    text: "МедЗащита / Маски",
-    price: "3$",
-    id: getUUID(),
-    src: "images/catalog/catalog-product-3.png",
-  },
-];
+  API_BASKET_KEY,
+} from "./services/localStorageApi.js";
+import { CATALOG } from "./data/data.js";
 
 const addProduct = function () {
   CATALOG.forEach((element) => {
@@ -56,34 +23,35 @@ const btnBasketCard = document.querySelector("#container-card");
 btnBasketCard.addEventListener("click", onCard);
 
 function onCard(event) {
-  switch (event.target.className) {
-    case "loop-add-basket-card":
-      creatBasketCard();
+  switch (event.target.id) {
+    case "card-basket":
+      createBasketCard();
       break;
-    case "loop-quick-view":
-      creatBigCard();
+    case "card-quick-view":
+      createBigCard();
       break;
   }
 }
 
-function creatBasketCard() {
-  const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+function createBasketCard() {
+  const basket = getStorageData(API_BASKET_KEY);
   const ourCard = CATALOG.find((card) => {
     return (
       card.text ===
-      event.target.previousElementSibling.firstElementChild.textContent
+      event.target.parentElement.parentElement.lastElementChild
+        .firstElementChild.textContent
     );
   });
   basket.push(ourCard);
-  setStorageData(WILDBERRIES_BASKET_KEY, basket);
+  setStorageData(API_BASKET_KEY, basket);
   basketProduct.innerHTML = "";
   basket.forEach((item) => {
-    const section = createModalBasket(item);
+    const section = createBasket(item);
     basketProduct.append(section);
   });
 }
 
-function creatBigCard() {
+function createBigCard() {
   const ourCard = CATALOG.find((card) => {
     return (
       card.text ===
@@ -94,23 +62,23 @@ function creatBigCard() {
   const section = createModalCard(ourCard);
   containerCard.append(section);
   // Закрыть карточку
-  const buttonClose = document.querySelector(".button-close");
+  const buttonClose = document.querySelector("#modal-card__close-btn");
   buttonClose.addEventListener("click", onCloseButton);
 
   function onCloseButton() {
-    document.querySelector(".big-card").remove();
+    document.querySelector(".modal-card").remove();
   }
   // Добавить в корзину из большой карточки
-  const buttonAddBasket = document.querySelector(".big-loop-add-basket-card");
+  const buttonAddBasket = document.querySelector("#modal-card-basket");
   buttonAddBasket.addEventListener("click", onBasketButton);
 
   function onBasketButton() {
-    const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+    const basket = getStorageData(API_BASKET_KEY);
     basket.push(ourCard);
-    setStorageData(WILDBERRIES_BASKET_KEY, basket);
+    setStorageData(API_BASKET_KEY, basket);
     basketProduct.innerHTML = "";
     basket.forEach((item) => {
-      const section = createModalBasket(item);
+      const section = createBasket(item);
       basketProduct.append(section);
     });
   }
@@ -120,14 +88,14 @@ const modalBasket = document.querySelector("#modal-basket");
 modalBasket.addEventListener("click", onModalBasket);
 
 const basketProduct = document.querySelector("#basket-product");
-const modalBasketProduct = document.querySelector("#modal-basket-product");
+const modalBasketProduct = document.querySelector("#basket-modal-product");
 
 function onModalBasket() {
   basketProduct.innerHTML = "";
   modalBasketProduct.classList.toggle("display-block");
-  const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+  const basket = getStorageData(API_BASKET_KEY);
   basket.forEach((item) => {
-    const section = createModalBasket(item);
+    const section = createBasket(item);
     basketProduct.append(section);
   });
 }
@@ -136,8 +104,8 @@ const btnDeleteBasket = document.querySelector("#delete-basket");
 btnDeleteBasket.addEventListener("click", onDeletBasket);
 
 function onDeletBasket() {
-  const basket = getStorageData(WILDBERRIES_BASKET_KEY);
+  const basket = getStorageData(API_BASKET_KEY);
   basket.length = 0;
   basketProduct.innerHTML = "";
-  setStorageData(WILDBERRIES_BASKET_KEY, basket);
+  setStorageData(API_BASKET_KEY, basket);
 }
