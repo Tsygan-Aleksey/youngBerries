@@ -1,11 +1,11 @@
-import { getUUID } from "/src/scripts/utils/utils.js";
+import { getUUID } from "/scripts/utils/utils.js";
 
 const CATALOG = [
   {
     text: "Honor / Умный браслет Band",
     price: "25$",
     id: getUUID(),
-    src: "/src/assets/catalog/item-watch.jpeg",
+    src: "/assets/catalog/item-watch.jpeg",
   },
   {
     text: "APRIL WINGS / Брюки женские",
