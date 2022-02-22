@@ -19,7 +19,7 @@
         right: 20px;
       }
     }
-    .section-card__grid {
+    .card-container {
       min-height: 100%;
       display: grid;
       grid-template-rows: 1fr;
@@ -32,7 +32,7 @@
   }
 }
 @media (min-width: 992px) {
-  .section-card__grid {
+  .card-container {
     min-height: 100%;
     display: grid;
     grid-template-rows: 1fr;
@@ -41,7 +41,7 @@
   }
 }
 @media (min-width: 1200px) {
-  .section-card__grid {
+  .card-container {
     min-height: 100%;
     display: grid;
     grid-template-rows: 1fr;
