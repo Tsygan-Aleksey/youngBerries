@@ -1,0 +1,74 @@
+$font-rb: Roboto;
+
+//basket
+%text-style-basket-item-title-18-20 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 20px;
+}
+//basket + //section-card
+%text-style-basket-item-price-18-20 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+// header
+%text-style-header-34-36 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 36px;
+}
+%text-style-header-20-22 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+//quick-view-modal-window
+%text-style-item-title-26-28 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 28px;
+}
+%text-style-item-price-22-24 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 24px;
+}
+//quick-view-modal-window + //section-card
+%text-style-item-basket-16-18 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+//section-card
+%text-style-section-title-26-28 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 28px;
+}
+%text-style-item-title-20-22 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 22px;
+}

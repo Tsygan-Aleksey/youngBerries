@@ -1,29 +1,5 @@
-$dark-text-color: #000;
-$background-basket-button: #cb11ab;
-$background-quick-view-modal-window: white;
-$font-rb: Roboto;
-
-%text-style-item-title-26-28 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 26px;
-  line-height: 28px;
-}
-%text-style-item-price-22-24 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 22px;
-  line-height: 24px;
-}
-%text-style-item-basket-16-18 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 18px;
-}
+@use "./fonts";
+@use "./colors" as color;
 
 .quick-view-modal-window {
   position: fixed;
@@ -43,27 +19,27 @@ $font-rb: Roboto;
     padding: 20px;
     border: 1px solid black;
     border-radius: 20px;
-    color: $dark-text-color;
-    background-color: $background-quick-view-modal-window;
+    color: color.$dark-text-color;
+    background-color: color.$background-quick-view-modal-window;
   }
   &__close-button {
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
-    color: $dark-text-color;
-    background-color: $background-basket-button;
+    color: color.$dark-text-color;
+    background-color: color.$background-basket-button;
   }
   &__close-button:hover {
-    color: $dark-text-color;
+    color: color.$dark-text-color;
   }
   &__title {
-    color: $dark-text-color;
+    color: color.$dark-text-color;
     @extend %text-style-item-title-26-28;
     margin-bottom: 20px;
   }
   &__price {
-    color: $dark-text-color;
+    color: color.$dark-text-color;
     @extend %text-style-item-price-22-24;
   }
   &__images {
@@ -73,13 +49,13 @@ $font-rb: Roboto;
   &__basket {
     border: none;
     border-radius: 10px;
-    color: $dark-text-color;
-    background-color: $background-basket-button;
+    color: color.$dark-text-color;
+    background-color: color.$background-basket-button;
     padding: 10px;
     @extend %text-style-item-basket-16-18;
     cursor: pointer;
   }
   &__basket:hover {
-    color: $dark-text-color;
+    color: color.$dark-text-color;
   }
 }

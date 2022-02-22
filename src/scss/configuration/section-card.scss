@@ -1,47 +1,13 @@
-// card
-$dark-text-color: #000;
-$ligth-text-color: #fff;
-$color-text-style-quick-view: rgba(73, 102, 162, 0.5);
-$background-basket-button: #cb11ab;
-$font-rb: Roboto;
-
-%text-style-section-title-26-28 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 26px;
-  line-height: 28px;
-}
-%text-style-item-title-20-22 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 20px;
-  line-height: 22px;
-}
-%text-style-item-price-basket-18-20 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 20px;
-}
-%text-style-item-basket-16-18 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 18px;
-}
+@use "./fonts";
+@use "./colors" as color;
 
 .section-card {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
-  margin-top: 110px;
   .bestseller {
     @extend %text-style-section-title-26-28;
-    color: $dark-text-color;
+    color: color.$dark-text-color;
     margin-bottom: 30px;
   }
   .card {
@@ -60,8 +26,8 @@ $font-rb: Roboto;
       right: 1%;
       border: none;
       border-radius: 50px;
-      color: $dark-text-color;
-      background-color: $background-basket-button;
+      color: color.$dark-text-color;
+      background-color: color.$background-basket-button;
       @extend %text-style-item-basket-16-18;
       padding: 0.2em 1em;
       cursor: pointer;
@@ -84,13 +50,13 @@ $font-rb: Roboto;
       position: relative;
       overflow: hidden;
       text-align: center;
-      color: $color-text-style-quick-view;
+      color: color.$color-text-style-quick-view;
       transition: 0.3s ease-in-out;
       cursor: pointer;
       @extend %text-style-item-basket-16-18;
     }
     &__quick-view:hover {
-      color: $dark-text-color;
+      color: color.$dark-text-color;
     }
     &__info {
       display: flex;
@@ -102,7 +68,7 @@ $font-rb: Roboto;
       margin-bottom: 10px;
     }
     &__info-price {
-      @extend %text-style-item-price-basket-18-20;
+      @extend %text-style-basket-item-price-18-20;
     }
   }
   .card:hover .card__review {
