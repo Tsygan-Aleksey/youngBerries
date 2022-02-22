@@ -1,7 +1,7 @@
 @use "./fonts";
 @use "./colors" as color;
 
-.basket-modal__container {
+.basket-modal {
   position: fixed;
   bottom: 10px;
   right: 10px;
@@ -15,24 +15,24 @@
   border: 1px solid black;
   border-radius: 20px;
   max-height: 50%;
-  .basket-modal__content {
+  &__content {
     position: relative;
     background-color: color.$background-basket-modal;
     color: color.$dark-text-color;
     padding: 20px;
   }
-  .basket-modal__header {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
-  .basket-modal__title {
+  &__title {
     margin-right: 30px;
     color: color.$dark-text-color;
     @extend %text-style-basket-item-title-18-20;
   }
-  .basket-modal__delete-button {
+  &__delete-button {
     border: none;
     border-radius: 10px;
     color: color.$dark-text-color;
@@ -41,7 +41,7 @@
     cursor: pointer;
     @extend %text-style-basket-item-title-18-20;
   }
-  .basket-modal__product {
+  &__product {
     margin-bottom: 20px;
   }
   .basket-item {
@@ -57,16 +57,16 @@
       @extend %text-style-basket-item-price-18-20;
     }
   }
-  .basket-modal__price {
+  &__price {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  .basket-modal__price-text {
+  &__price-text {
     color: color.$dark-text-color;
     @extend %text-style-basket-item-title-18-20;
   }
-  .basket-modal__price-sum {
+  &__price-sum {
     color: color.$dark-text-color;
     @extend %text-style-basket-item-price-18-20;
   }

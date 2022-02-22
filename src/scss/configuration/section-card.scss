@@ -5,73 +5,75 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
-  .bestseller {
+  &__bestseller {
     @extend %text-style-section-title-26-28;
     color: color.$dark-text-color;
     margin-bottom: 30px;
   }
-  .card {
-    height: 100%;
-    position: relative;
-    &__main {
+  &__grid {
+    .card {
+      height: 100%;
       position: relative;
-      margin-bottom: 10px;
+      &__main {
+        position: relative;
+        margin-bottom: 10px;
+      }
+      &__images {
+        border-radius: 2%;
+      }
+      &__basket {
+        position: absolute;
+        bottom: 1%;
+        right: 1%;
+        border: none;
+        border-radius: 50px;
+        color: color.$dark-text-color;
+        background-color: color.$background-basket-button;
+        @extend %text-style-item-basket-16-18;
+        padding: 0.2em 1em;
+        cursor: pointer;
+      }
+      &__review {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: 0.3s ease-in-out;
+      }
+      &__quick-view {
+        border: none;
+        border-radius: 50px;
+        white-space: nowrap;
+        text-transform: uppercase;
+        padding: 0.5em 1em;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+        color: color.$color-text-style-quick-view;
+        transition: 0.3s ease-in-out;
+        cursor: pointer;
+        @extend %text-style-item-basket-16-18;
+      }
+      &__quick-view:hover {
+        color: color.$dark-text-color;
+      }
+      &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      &__info-title {
+        @extend %text-style-item-title-20-22;
+        margin-bottom: 10px;
+      }
+      &__info-price {
+        @extend %text-style-basket-item-price-18-20;
+      }
     }
-    &__images {
-      border-radius: 2%;
+    .card:hover .card__review {
+      opacity: 1;
     }
-    &__basket {
-      position: absolute;
-      bottom: 1%;
-      right: 1%;
-      border: none;
-      border-radius: 50px;
-      color: color.$dark-text-color;
-      background-color: color.$background-basket-button;
-      @extend %text-style-item-basket-16-18;
-      padding: 0.2em 1em;
-      cursor: pointer;
-    }
-    &__review {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      opacity: 0;
-      transform: translate(-50%, -50%);
-      transition: 0.3s ease-in-out;
-    }
-    &__quick-view {
-      border: none;
-      border-radius: 50px;
-      white-space: nowrap;
-      text-transform: uppercase;
-      padding: 0.5em 1em;
-      outline: none;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      color: color.$color-text-style-quick-view;
-      transition: 0.3s ease-in-out;
-      cursor: pointer;
-      @extend %text-style-item-basket-16-18;
-    }
-    &__quick-view:hover {
-      color: color.$dark-text-color;
-    }
-    &__info {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-    &__info-title {
-      @extend %text-style-item-title-20-22;
-      margin-bottom: 10px;
-    }
-    &__info-price {
-      @extend %text-style-basket-item-price-18-20;
-    }
-  }
-  .card:hover .card__review {
-    opacity: 1;
   }
 }
