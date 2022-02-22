@@ -1,43 +1,26 @@
-$dark-text-color: #000;
-$ligth-text-color: #fff;
-$background-basket-button: #cb11ab;
-$font-rb: Roboto;
-
-%text-style-header-34-36 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 34px;
-  line-height: 36px;
-}
-
-%text-style-header-16-18 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 18px;
-}
+@use "./fonts";
+@use "./colors" as color;
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 2;
   padding: 20px;
+  margin-bottom: 20px;
   background: -webkit-gradient(
       linear,
       left top,
       right top,
-      from($background-basket-button),
-      to(#481173)
+      from(color.$background-basket-button),
+      to(color.$background-header)
     )
     no-repeat;
   background-color: linear-gradient(
     to right,
-    $background-basket-button 0,
-    #481173 100%
+    color.$background-basket-button 0,
+    color.$background-header 100%
   );
   &__container {
     max-width: 1400px;
@@ -48,7 +31,7 @@ $font-rb: Roboto;
     justify-content: space-between;
   }
   &__wildberries {
-    color: $ligth-text-color;
+    color: color.$ligth-text-color;
     text-decoration: none;
     @extend %text-style-header-34-36;
   }
@@ -58,22 +41,22 @@ $font-rb: Roboto;
     border: none;
     border-radius: 10px;
     outline: none;
-    color: $ligth-text-color;
-    background-color: rgba(255, 255, 255, 0.2);
+    color: color.$ligth-text-color;
+    background-color: color.$background-header-input;
     padding: 10px;
-    @extend %text-style-header-16-18;
+    @extend %text-style-header-20-22;
     cursor: pointer;
   }
   &__input::placeholder {
-    color: $ligth-text-color;
+    color: color.$ligth-text-color;
   }
   &__basket-button {
     border: none;
     border-radius: 10px;
-    color: $dark-text-color;
-    background-color: $background-basket-button;
+    color: color.$dark-text-color;
+    background-color: color.$background-basket-button;
     padding: 10px;
-    @extend %text-style-header-16-18;
+    @extend %text-style-header-20-22;
     cursor: pointer;
   }
 }

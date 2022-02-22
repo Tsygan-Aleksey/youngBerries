@@ -1,36 +1,7 @@
-//basket
+@use "./fonts";
+@use "./colors" as color;
 
-$dark-text-color: #000;
-$ligth-text-color: #fff;
-$background-basket-modal: white;
-$background-basket-button: #cb11ab;
-$font-rb: Roboto;
-
-%text-style-header-16-18 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 18px;
-}
-
-%text-style-basket-item-title-18-20 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: 300;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-%text-style-basket-item-price-18-20 {
-  font-family: $font-rb;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 18px;
-  line-height: 20px;
-}
-
-.basket-modal__container {
+.basket-modal {
   position: fixed;
   bottom: 10px;
   right: 10px;
@@ -43,33 +14,34 @@ $font-rb: Roboto;
   min-width: 20%;
   border: 1px solid black;
   border-radius: 20px;
-  .basket-modal__content {
+  max-height: 50%;
+  &__content {
     position: relative;
-    background-color: $background-basket-modal;
-    color: $dark-text-color;
+    background-color: color.$background-basket-modal;
+    color: color.$dark-text-color;
     padding: 20px;
   }
-  .basket-modal__header {
+  &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
   }
-  .basket-modal__title {
+  &__title {
     margin-right: 30px;
-    color: $dark-text-color;
-    @extend %text-style-header-16-18;
+    color: color.$dark-text-color;
+    @extend %text-style-basket-item-title-18-20;
   }
-  .basket-modal__delete-button {
+  &__delete-button {
     border: none;
     border-radius: 10px;
-    color: $dark-text-color;
-    background-color: $background-basket-button;
+    color: color.$dark-text-color;
+    background-color: color.$background-basket-button;
     padding: 10px;
     cursor: pointer;
-    @extend %text-style-header-16-18;
+    @extend %text-style-basket-item-title-18-20;
   }
-  .basket-modal__product {
+  &__product {
     margin-bottom: 20px;
   }
   .basket-item {
@@ -85,9 +57,18 @@ $font-rb: Roboto;
       @extend %text-style-basket-item-price-18-20;
     }
   }
-  .basket-modal__price-sum {
-    color: $dark-text-color;
-    @extend %text-style-header-16-18;
+  &__price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__price-text {
+    color: color.$dark-text-color;
+    @extend %text-style-basket-item-title-18-20;
+  }
+  &__price-sum {
+    color: color.$dark-text-color;
+    @extend %text-style-basket-item-price-18-20;
   }
 }
 .display-block {
