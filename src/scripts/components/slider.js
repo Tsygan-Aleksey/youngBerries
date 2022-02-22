@@ -1,111 +1,51 @@
-import {
-  containerCard,
-  createCard,
-  createModalCard,
-  createBasket,
-} from "./templates/templates.js";
-import {
-  getStorageData,
-  setStorageData,
-  API_BASKET_KEY,
-} from "./services/localStorageApi.js";
-import { CATALOG } from "./data/data.js";
+"use strict";
 
-const addProduct = function () {
-  CATALOG.forEach((element) => {
-    const section = createCard(element);
-    containerCard.append(section);
-  });
-};
-addProduct();
 
-const btnBasketCard = document.querySelector("#container-card");
-btnBasketCard.addEventListener("click", onCard);
+let slideIndex = 1;
+showSlides(slideIndex);
 
-function onCard(event) {
-  switch (event.target.id) {
-    case "card-basket":
-      createBasketCard();
-      break;
-    case "card-quick-view":
-      createBigCard();
-      break;
+/* Функция увеличивает индекс на 1, показывает следующй слайд*/
+const next = document.querySelector('#next')
+next.addEventListener('click', plusSlide)
+function plusSlide() {
+  showSlides((slideIndex += 1));
+}
+
+/* Функция уменьшяет индекс на 1, показывает предыдущий слайд*/
+const prev = document.querySelector('#prev')
+prev.addEventListener('click', minusSlide)
+function minusSlide() {
+  showSlides((slideIndex -= 1));
+}
+
+/* Устанавливает текущий слайд */
+document.querySelector('#dot1').addEventListener('click',function(){ currentSlide(1); })
+document.querySelector('#dot2').addEventListener('click',function(){ currentSlide(2); })
+document.querySelector('#dot3').addEventListener('click',function(){ currentSlide(3); })
+document.querySelector('#dot4').addEventListener('click',function(){ currentSlide(4); })
+
+function currentSlide(number) {
+  showSlides((slideIndex = number));
+}
+
+/* Основная функция слайдера */
+function showSlides(number) {
+  const slides = document.getElementsByClassName("item");
+  const dots = document.getElementsByClassName("slider-dots__item");
+  
+  if (number > slides.length) {
+    slideIndex = 1;
   }
-}
-
-function createBasketCard() {
-  const basket = getStorageData(API_BASKET_KEY);
-  const ourCard = CATALOG.find((card) => {
-    return (
-      card.text ===
-      event.target.parentElement.parentElement.lastElementChild
-        .firstElementChild.textContent
-    );
-  });
-  basket.push(ourCard);
-  setStorageData(API_BASKET_KEY, basket);
-  basketProduct.innerHTML = "";
-  basket.forEach((item) => {
-    const section = createBasket(item);
-    basketProduct.append(section);
-  });
-}
-
-function createBigCard() {
-  const ourCard = CATALOG.find((card) => {
-    return (
-      card.text ===
-      event.target.parentElement.nextElementSibling.firstElementChild
-        .textContent
-    );
-  });
-  const section = createModalCard(ourCard);
-  containerCard.append(section);
-  // Закрыть карточку
-  const buttonClose = document.querySelector("#modal-card__close-btn");
-  buttonClose.addEventListener("click", onCloseButton);
-
-  function onCloseButton() {
-    document.querySelector(".modal-card").remove();
+  if (number < 1) {
+    slideIndex = slides.length;
   }
-  // Добавить в корзину из большой карточки
-  const buttonAddBasket = document.querySelector("#modal-card-basket");
-  buttonAddBasket.addEventListener("click", onBasketButton);
-
-  function onBasketButton() {
-    const basket = getStorageData(API_BASKET_KEY);
-    basket.push(ourCard);
-    setStorageData(API_BASKET_KEY, basket);
-    basketProduct.innerHTML = "";
-    basket.forEach((item) => {
-      const section = createBasket(item);
-      basketProduct.append(section);
-    });
+  for (let index = 0; index < slides.length; index++) {
+    slides[index].style.display = "none";
   }
+  for (let index = 0; index < dots.length; index++) {
+    dots[index].className = dots[index].className.replace(" active", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
-const modalBasket = document.querySelector("#modal-basket");
-modalBasket.addEventListener("click", onModalBasket);
-
-const basketProduct = document.querySelector("#basket-product");
-const modalBasketProduct = document.querySelector("#basket-modal-product");
-
-function onModalBasket() {
-  basketProduct.innerHTML = "";
-  modalBasketProduct.classList.toggle("display-block");
-  const basket = getStorageData(API_BASKET_KEY);
-  basket.forEach((item) => {
-    const section = createBasket(item);
-    basketProduct.append(section);
-  });
-}
-
-const btnDeleteBasket = document.querySelector("#delete-basket");
-btnDeleteBasket.addEventListener("click", onDeletBasket);
-
-function onDeletBasket() {
-  const basket = getStorageData(API_BASKET_KEY);
-  basket.length = 0;
-  basketProduct.innerHTML = "";
-  setStorageData(API_BASKET_KEY, basket);
-}

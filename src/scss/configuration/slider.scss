@@ -1,10 +1,11 @@
+@import 'reset';
+
 $primary-color: rgb(206, 31, 206);
 
 %dots-hover { color:$primary-color;
     width: 15px;
     height: 15px;
 }
-@import 'reset';
 
 .slider{
     max-width: 90%;
@@ -53,7 +54,7 @@ $primary-color: rgb(206, 31, 206);
         :hover {background-color: rgba(0, 0, 0, 0.8);}
     }
 
-/* Кружочки */
+
 .slider-dots {
     text-align: center;
     margin-top: 15px;
