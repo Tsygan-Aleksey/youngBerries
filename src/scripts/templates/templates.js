@@ -25,7 +25,7 @@ function createCard(todo) {
   cardBasketButton.id = "card-basket";
   const cardInfo = createElement("div", "card__info");
   const cardTitle = createElement("h3", "card__info-title", todo.text);
-  const cardPrice = createElement("div", "card__info-price", todo.price);
+  const cardPrice = createElement("div", "card__info-price", `${todo.price}$`);
 
   cardMain.append(cardImages, cardBasketButton);
   cardReview.append(reviewButton);
@@ -55,7 +55,7 @@ function createModalCard(todo) {
   const cardPrice = createElement(
     "div",
     "quick-view-modal-window__price",
-    todo.price
+    `${todo.price}$`
   );
   const basketButton = createElement(
     "button",
@@ -77,7 +77,11 @@ function createModalCard(todo) {
 function createBasket(todo) {
   const product = createElement("div", "basket-item");
   const productTitle = createElement("h3", "basket-item__title", todo.text);
-  const productPrice = createElement("div", "basket-item__price", todo.price);
+  const productPrice = createElement(
+    "div",
+    "basket-item__price",
+    `${todo.price}$`
+  );
 
   product.append(productTitle, productPrice);
   return product;
