@@ -25,7 +25,7 @@ function createCard(todo) {
   cardBasketButton.id = "card-basket";
   const cardInfo = createElement("div", "card__info");
   const cardTitle = createElement("h3", "card__info-title", todo.text);
-  const cardPrice = createElement("div", "card__info-price", todo.price);
+  const cardPrice = createElement("div", "card__info-price", `${todo.price}$`);
 
   cardMain.append(cardImages, cardBasketButton);
   cardReview.append(reviewButton);
@@ -36,17 +36,33 @@ function createCard(todo) {
 }
 
 function createModalCard(todo) {
-  const card = createElement("div", "modal-card");
+  const card = createElement("div", "quick-view-modal-window");
   card.id = todo.id;
-  const cardContent = createElement("div", "modal-card__content");
-  const closeButton = createElement("button", "modal-card__close-button", "✕");
-  closeButton.id = "modal-card__close-btn";
-  const cardImages = createElement("img", "madal-card__images");
+  const cardContent = createElement("div", "quick-view-modal-window__content");
+  const closeButton = createElement(
+    "button",
+    "quick-view-modal-window__close-button",
+    "✕"
+  );
+  closeButton.id = "quick-view-modal-window__close-btn";
+  const cardImages = createElement("img", "quick-view-modal-window__images");
   cardImages.src = todo.src;
-  const cardTitle = createElement("h3", "modal-card__title", todo.text);
-  const cardPrice = createElement("div", "modal-card__price", todo.price);
-  const basketButton = createElement("button", "card__basket", "В корзину");
-  basketButton.id = "modal-card-basket";
+  const cardTitle = createElement(
+    "h3",
+    "quick-view-modal-window__title",
+    todo.text
+  );
+  const cardPrice = createElement(
+    "div",
+    "quick-view-modal-window__price",
+    `${todo.price}$`
+  );
+  const basketButton = createElement(
+    "button",
+    "quick-view-modal-window__basket",
+    "В корзину"
+  );
+  basketButton.id = "quick-view-modal-window-basket";
   cardContent.append(
     closeButton,
     cardTitle,
@@ -61,7 +77,11 @@ function createModalCard(todo) {
 function createBasket(todo) {
   const product = createElement("div", "basket-item");
   const productTitle = createElement("h3", "basket-item__title", todo.text);
-  const productPrice = createElement("div", "basket-item__price", todo.price);
+  const productPrice = createElement(
+    "div",
+    "basket-item__price",
+    `${todo.price}$`
+  );
 
   product.append(productTitle, productPrice);
   return product;

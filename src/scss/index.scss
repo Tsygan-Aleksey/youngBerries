@@ -1,0 +1,13 @@
+@import "./configuration/reset.scss";
+@import "./configuration/respon.scss";
+@import "./configuration/header.scss";
+@import "./configuration/section-card.scss";
+@import "./configuration/basket.scss";
+@import "./configuration/quick-view-modal-window.scss";
+
+.root-app {
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}

@@ -1,0 +1,85 @@
+$dark-text-color: #000;
+$background-basket-button: #cb11ab;
+$background-quick-view-modal-window: white;
+$font-rb: Roboto;
+
+%text-style-item-title-26-28 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 26px;
+  line-height: 28px;
+}
+%text-style-item-price-22-24 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 24px;
+}
+%text-style-item-basket-16-18 {
+  font-family: $font-rb;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.quick-view-modal-window {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    position: relative;
+    width: 30%;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    color: $dark-text-color;
+    background-color: $background-quick-view-modal-window;
+  }
+  &__close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color: $dark-text-color;
+    background-color: $background-basket-button;
+  }
+  &__close-button:hover {
+    color: $dark-text-color;
+  }
+  &__title {
+    color: $dark-text-color;
+    @extend %text-style-item-title-26-28;
+    margin-bottom: 20px;
+  }
+  &__price {
+    color: $dark-text-color;
+    @extend %text-style-item-price-22-24;
+  }
+  &__images {
+    border-radius: 50px;
+    padding: 30px;
+  }
+  &__basket {
+    border: none;
+    border-radius: 10px;
+    color: $dark-text-color;
+    background-color: $background-basket-button;
+    padding: 10px;
+    @extend %text-style-item-basket-16-18;
+    cursor: pointer;
+  }
+  &__basket:hover {
+    color: $dark-text-color;
+  }
+}

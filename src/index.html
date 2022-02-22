@@ -5,18 +5,22 @@
     <title>youngBerries</title>
     <script src="scripts/index.js" defer type="module"></script>
     <link rel="stylesheet" href="scss/index.scss">
-    <link rel="stylesheet" href="scss/style.css">
-    <link rel="stylesheet" href="scss/configuration/reset.css">
+                    <!-- styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="root-app">
         <header class="header">
-            <a class="header__wildberries" href="#">WILDBERRIES</a>
-            <input type="text" placeholder="Я ищу ..">
-            <button class="header__button-loupe">Поиск
-                <img src="/assets/icons/search-icon.png" alt="#">
-            </button>
-            <button id="modal-basket" class="header__button-basket">Корзина</button>
+            <div class="header__container">
+                <a class="header__wildberries" href="#">WILDBERRIES</a>
+                <input class="header__input" type="text" placeholder="Поиск">
+                <button id="modal-basket" class="header__basket-button">Корзина</button>
+            </div>
         </header>
         <main class="main">
             <section class="section-card">
