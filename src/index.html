@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>youngBerries</title>
+    <script src="scripts/index.js" defer type="module"></script>
+    <link rel="stylesheet" href="scss/index.scss">
+                    <!-- styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="root-app">
+        <header class="header">
+            <div class="header__container">
+                <a class="header__wildberries" href="#">WILDBERRIES</a>
+                <input class="header__input" type="text" placeholder="Поиск">
+                <button id="modal-basket" class="header__basket-button">Корзина</button>
+            </div>
+        </header>
+        <main class="main">
+            <section class="section-card">
+                <p class="bestseller">Хиты продаж:</p>
+                <div id="container-card" class="grid"></div>
+            </section>
+            <div id="basket-modal-product" class="basket-modal__container">
+                <div class="basket-modal__content">
+                    <div class="basket-modal__header">
+                        <h3 class="basket-modal__title">Корзина</h3>
+                        <button id="delete-basket" class="basket-modal__delete-button">Очистить корзину</button>
+                    </div>
+                    <div id="basket-product" class="basket-modal__product"></div>
+                    <p class="basket-modal__price-sum">Итого: </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
