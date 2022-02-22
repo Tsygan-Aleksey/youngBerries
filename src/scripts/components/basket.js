@@ -18,7 +18,7 @@ function onModalBasket() {
   });
 }
 
-function onDeletBasket() {
+function onDeleteBasket() {
   const basket = getStorageData(API_BASKET_KEY);
   basket.length = 0;
   basketProduct.innerHTML = "";
@@ -36,4 +36,4 @@ function basketModalPriceSum() {
   priceSum.textContent = `${sumValue}$`;
 }
 
-export { onModalBasket, onDeletBasket, basketProduct, basketModalPriceSum };
+export { onModalBasket, onDeleteBasket, basketProduct, basketModalPriceSum };

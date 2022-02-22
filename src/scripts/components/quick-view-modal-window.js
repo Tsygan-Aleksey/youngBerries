@@ -4,7 +4,7 @@ import {
   API_BASKET_KEY,
 } from "../services/localStorageApi.js";
 import { CATALOG } from "../data/data.js";
-import { basketProduct, basketModalPriceSum } from "../components/basket.js";
+import { basketProduct, basketModalPriceSum } from "./basket.js";
 import {
   createBasket,
   createModalCard,

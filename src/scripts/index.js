@@ -2,7 +2,7 @@ import { containerCard, createCard } from "./templates/templates.js";
 import { CATALOG } from "./data/data.js";
 import {
   onModalBasket,
-  onDeletBasket,
+  onDeleteBasket,
   basketModalPriceSum,
 } from "./components/basket.js";
 import {
@@ -39,4 +39,4 @@ modalBasket.addEventListener("click", onModalBasket);
 
 //Кнопка очистить корзину - basket.js
 const btnDeleteBasket = document.querySelector("#delete-basket");
-btnDeleteBasket.addEventListener("click", onDeletBasket);
+btnDeleteBasket.addEventListener("click", onDeleteBasket);
