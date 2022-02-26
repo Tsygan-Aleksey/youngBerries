@@ -1,7 +1,5 @@
 @import 'reset';
-
 $primary-color: rgb(206, 31, 206);
-
 
 .slider{
     max-width: 90%;
@@ -55,29 +53,27 @@ $primary-color: rgb(206, 31, 206);
 .slider-dots {
     text-align: center;
     margin-top: 15px;
+    &__item{
+        cursor: pointer;
+        height: 12px;
+        width: 12px;
+        margin: 0 2px;
+        background-color: #ddd;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+        &__item:hover {
+            width: 15px;
+            height: 15px;
+            background-color: $primary-color;
+        }
 }
-.slider-dots__item{
-    cursor: pointer;
-    height: 12px;
-    width: 12px;
-    margin: 0 2px;
-    background-color: #ddd;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-    }
-
-.active:hover{
+.active{
     width: 15px;
     height: 15px;
     background-color: $primary-color;
 }
-.slider-dots__item:hover {
-    width: 15px;
-    height: 15px;
-    background-color: $primary-color;
-}
-
 .slider.item {
     -webkit-animation-name: fade;
     -webkit-animation-duration: 1.5s;
