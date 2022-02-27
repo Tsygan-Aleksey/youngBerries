@@ -4,11 +4,16 @@
 @import "./configuration/section-card.scss";
 @import "./configuration/basket.scss";
 @import "./configuration/quick-view-modal-window.scss";
-@import "./configuration/search.scss";
 
 .root-app {
   position: relative;
   flex-direction: column;
   min-height: 100vh;
   display: flex;
+}
+.card.hide{
+  display: none;
+}
+.slider.hide{
+  display: none;
 }

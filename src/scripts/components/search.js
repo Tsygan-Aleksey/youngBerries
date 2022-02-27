@@ -1,25 +1,24 @@
 //Поиск в header
-const search = document.querySelector('#search-input');
-search.oninput = function(){
-  let val = this.value.trim();
-  const elasticItems = document.querySelectorAll('.card');
-  const sliderHide = document.querySelector('.slider')
-  if(val != ''){
-    elasticItems.forEach(function (elem){
-      if (elem.innerText.search(val) == -1){
-        elem.classList.add('hide');
-        sliderHide.classList.add('hide');
-      }
-      else{
-        elem.classList.remove('hide');
-        sliderHide.classList.remove('hide');
-      }
+function searchCard (){
+  const value = document.querySelector('.header__input').value
+  const cards = document.querySelectorAll('.card');
+  //const slider = document.querySelector('.slider');
+  if(value === ''){
+    cards.forEach(function(card){
+      card.classList.remove('hide');
+      //slider.classList.remove('hide');
     });
+  }else {
+    cards.forEach(card => {
+      if (card.textContent.toLowerCase().search(value.toLowerCase()) === -1) {
+        card.classList.add('hide');
+        //slider.classList.add('hide');
+      } else{
+        card.classList.remove('hide');
+        //slider.classList.remove('hide');
+      }
+    })
   }
-  else{
-    elasticItems.forEach(function (elem){
-        elem.classList.remove('hide');
-        sliderHide.classList.remove('hide');
-  });
 }
-}
+
+export {searchCard}

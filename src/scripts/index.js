@@ -9,6 +9,12 @@ import {
   createBasketCard,
   createBigCard,
 } from "./components/quick-view-modal-window.js";
+import {
+  searchCard
+} from "./components/search.js";
+const search = document.querySelector('.header__input')
+search.oninput = searchCard
+
 
 const addProduct = function () {
   CATALOG.forEach((element) => {
