@@ -3,8 +3,9 @@
 
 .basket-modal {
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 0px;
+  right: 0px;
+  margin: 10px;
   overflow-y: auto;
   overflow-x: hidden;
   display: flex;
@@ -32,7 +33,7 @@
     color: color.$dark-text-color;
     @extend %text-style-basket-item-title-18-20;
   }
-  &__delete-button {
+  &__clear-all-button {
     border: none;
     border-radius: 10px;
     color: color.$dark-text-color;

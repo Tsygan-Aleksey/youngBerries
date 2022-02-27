@@ -4,36 +4,97 @@ import {
   API_BASKET_KEY,
 } from "../services/localStorageApi.js";
 import { createBasket } from "../templates/templates.js";
+import { CATALOG } from "../data/data.js";
 
 const basketProduct = document.querySelector("#basket-product");
-const modalBasketProduct = document.querySelector("#basket-modal-product");
 
-function onModalBasket() {
-  basketProduct.innerHTML = "";
-  modalBasketProduct.classList.toggle("display-block");
-  const basket = getStorageData(API_BASKET_KEY);
-  basket.forEach((item) => {
-    const section = createBasket(item);
-    basketProduct.append(section);
-  });
+function BasketCard(text, price) {
+  this.text = text;
+  this.price = `$${price}`;
+
+  this.add = function () {
+    const basket = getStorageData(API_BASKET_KEY);
+    const card = CATALOG.find((card) => {
+      // card.id === event.target.parentElement.parentElement.id;
+      return (
+        card.text ===
+        event.target.parentElement.parentElement.lastElementChild
+          .firstElementChild.textContent
+      );
+    });
+    const element = new BasketCard(card.text, card.price);
+    basket.push(element);
+    setStorageData(API_BASKET_KEY, basket);
+    this.render();
+  };
+
+  this.render = function () {
+    const basket = getStorageData(API_BASKET_KEY);
+    basketProduct.innerHTML = "";
+    basket.forEach((element) => {
+      const card = createBasket(element);
+      basketProduct.append(card);
+    });
+    this.calcBasketSum();
+  };
+
+  const modalBasketProduct = document.querySelector("#basket-modal-product");
+
+  this.toggle = function () {
+    if (modalBasketProduct.classList.contains("active")) {
+      this.close();
+    } else {
+      this.open();
+    }
+  };
+  this.open = function () {
+    modalBasketProduct.classList.add("active");
+  };
+  this.close = function () {
+    modalBasketProduct.classList.remove("active");
+  };
+
+  this.clearBasket = function () {
+    const basket = getStorageData(API_BASKET_KEY);
+    basket.length = 0;
+    setStorageData(API_BASKET_KEY, basket);
+    this.render();
+  };
+
+  this.calcBasketSum = function () {
+    const basket = getStorageData(API_BASKET_KEY);
+    const sumValue = basket.reduce((acc, item) => {
+      return acc + Number(item["price"].slice(1));
+    }, 0);
+    document.querySelector("#calc-basket-sum").textContent = `$${sumValue}`;
+  };
 }
 
-function onDeleteBasket() {
-  const basket = getStorageData(API_BASKET_KEY);
-  basket.length = 0;
-  basketProduct.innerHTML = "";
-  setStorageData(API_BASKET_KEY, basket);
-  priceSum.textContent = "0$";
+//Кнопка корзина в header
+document
+  .querySelector("#modal-basket")
+  .addEventListener("click", onHeaderBasketBtn);
+
+function onHeaderBasketBtn() {
+  const card = new BasketCard();
+  card.toggle();
+  card.render();
 }
 
-// Общая стоимость товара в корзине
-const priceSum = document.querySelector("#price-sum");
-function basketModalPriceSum() {
-  const basket = getStorageData(API_BASKET_KEY);
-  const sumValue = basket.reduce((acc, item) => {
-    return acc + item["price"];
-  }, 0);
-  priceSum.textContent = `${sumValue}$`;
+//Кнопка очистить корзину
+document
+  .querySelector("#clear-all-basket")
+  .addEventListener("click", onClearBasket);
+
+function onClearBasket() {
+  const card = new BasketCard();
+  card.clearBasket();
 }
 
-export { onModalBasket, onDeleteBasket, basketProduct, basketModalPriceSum };
+//Кнопка добавить в корзину на карточке
+function createBasketCard() {
+  const card = new BasketCard();
+  card.add();
+}
+
+export { basketProduct, BasketCard, createBasketCard };
