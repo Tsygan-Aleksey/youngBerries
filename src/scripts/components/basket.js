@@ -3,8 +3,8 @@ import {
   setStorageData,
   API_BASKET_KEY,
 } from "../services/localStorageApi.js";
-import { createBasket } from "../templates/templates.js";
 import { CATALOG } from "../data/data.js";
+import { createElement } from "../templates/templates.js";
 
 const basketProduct = document.querySelector("#basket-product");
 
@@ -66,7 +66,7 @@ function BasketCard(text, price) {
     const sumValue = basket.reduce((acc, item) => {
       return acc + Number(item["price"].slice(1));
     }, 0);
-    document.querySelector("#calc-basket-sum").textContent = `$${sumValue}`;
+    document.querySelector("#sum-basket").textContent = `$${sumValue}`;
   };
 }
 
@@ -97,4 +97,13 @@ function createBasketCard() {
   card.add();
 }
 
-export { basketProduct, BasketCard, createBasketCard };
+function createBasket({ text, price }) {
+  const product = createElement("div", "basket-item");
+  const productTitle = createElement("h3", "basket-item__title", text);
+  const productPrice = createElement("div", "basket-item__price", price);
+
+  product.append(productTitle, productPrice);
+  return product;
+}
+
+export { basketProduct, BasketCard, createBasketCard, createBasket };
