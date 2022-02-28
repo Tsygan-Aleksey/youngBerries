@@ -3,29 +3,44 @@ import { createElement } from "../templates/templates";
 const toast = {
   init() {
     this.hideTimeout = null;
-    this.el = createElement(
+    this.element = createElement(
       "div",
       "toast",
-      "Данный сайт создан командой YoungBerries !"
+      "Данная страница создана командой YoungBerries!"
     );
-    document.body.append(this.el);
+    this.btn = createElement(
+        'button',
+        'toast__btn',
+        'X'
+    );
+
+    this.btn.addEventListener('click', () =>{
+      this.element.classList.remove("toast-visible");
+    })
+
+    this.element.append(this.btn)
+    document.body.append(this.element);
     return document.body;
   },
 
-  show(message, state) {
-    clearTimeout(this.hideTimeout);
+  show(state) {
 
-    this.el.textContent = message;
-    this.el.className = "toast toast-visible";
+    clearTimeout(this.hideTimeOut);
 
     if (state) {
-      this.el.classList.add(`toast-${state}`);
+      this.element.classList.add(`toast-${state}`);
     }
 
-    this.hideTimeout = setTimeout(() => {
-      this.el.classList.remove("toast-visible");
-    }, 3000);
+    this.hideTimeOut = setTimeout(() => {
+      this.element.classList.remove("toast-visible");
+    }, 15000);
   },
-};
+  };
 
-document.addEventListener("DOMContentLoaded", () => toast.init());
+function initToast(){
+  toast.init()
+  toast.show('visible')
+}
+
+
+export {initToast}

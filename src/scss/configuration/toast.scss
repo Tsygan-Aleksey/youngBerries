@@ -7,7 +7,6 @@
   left: 0;
   right: 0;
   margin: auto;
-  z-index: 3;
 
   max-width: 50%;
   padding: 10px;
@@ -19,25 +18,25 @@
 
   visibility: hidden;
   opacity: 0;
-  transform: opacity 0.2s, top 0.2, visibility 0.2s;
+  transform: opacity 0.5s, top 0.5s, visibility 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn{
+      border: 1px solid white;
+      border-radius: 10px;
+      color: color.$ligth-text-color;
+      @extend %text-style-header-20-22;
+      background: none;
+    }
 }
 
 .toast-visible {
   top: 100px;
-  z-index: 3;
 
   opacity: 1;
   visibility: visible;
 }
 
-.toast-success {
-  background: color.$background-toast-success;
-  border-color: color.$background-toast-success;
-  color: color.$ligth-text-color;
-}
 
-.toast-error {
-  background: color.$background-toast-eroor;
-  border-color: color.$background-toast-eroor;
-  color: color.$ligth-text-color;
-}
