@@ -1,4 +1,25 @@
-const containerCard = document.querySelector("#container-card");
+import { CATALOG } from "../data/data";
+import { containerCard } from "../index.js";
+import { createBasketCard } from "../components/basket.js";
+import { isOurCard } from "../components/quick-view-modal-window.js";
+
+const addProduct = function () {
+  CATALOG.forEach((element) => {
+    const section = createCard(element);
+    containerCard.append(section);
+  });
+};
+
+function onCard(event) {
+  switch (event.target.className) {
+    case "card__basket": //Кнопка "в корзину" на карточке
+      createBasketCard();
+      break;
+    case "card__quick-view": //Кнопка "быстрый просмотр" на карточке
+      isOurCard();
+      break;
+  }
+}
 
 function createElement(tag, className, text = "") {
   const element = document.createElement(tag);
@@ -10,6 +31,7 @@ function createElement(tag, className, text = "") {
 
 function createCard(todo) {
   const card = createElement("div", "card");
+  card.addEventListener("click", onCard);
   card.id = todo.id;
   const cardMain = createElement("div", "card__main");
   const cardImages = createElement("img", "card__images");
@@ -20,12 +42,10 @@ function createCard(todo) {
     "card__quick-view",
     "Быстрый просмотр"
   );
-  reviewButton.id = "card-quick-view";
   const cardBasketButton = createElement("button", "card__basket", "В корзину");
-  cardBasketButton.id = "card-basket";
   const cardInfo = createElement("div", "card__info");
   const cardTitle = createElement("h3", "card__info-title", todo.text);
-  const cardPrice = createElement("div", "card__info-price", `${todo.price}$`);
+  const cardPrice = createElement("div", "card__info-price", `$${todo.price}`);
 
   cardMain.append(cardImages, cardBasketButton);
   cardReview.append(reviewButton);
@@ -35,56 +55,4 @@ function createCard(todo) {
   return card;
 }
 
-function createModalCard(todo) {
-  const card = createElement("div", "quick-view-modal-window");
-  card.id = todo.id;
-  const cardContent = createElement("div", "quick-view-modal-window__content");
-  const closeButton = createElement(
-    "button",
-    "quick-view-modal-window__close-button",
-    "✕"
-  );
-  closeButton.id = "quick-view-modal-window__close-btn";
-  const cardImages = createElement("img", "quick-view-modal-window__images");
-  cardImages.src = todo.src;
-  const cardTitle = createElement(
-    "h3",
-    "quick-view-modal-window__title",
-    todo.text
-  );
-  const cardPrice = createElement(
-    "div",
-    "quick-view-modal-window__price",
-    `${todo.price}$`
-  );
-  const basketButton = createElement(
-    "button",
-    "quick-view-modal-window__basket",
-    "В корзину"
-  );
-  basketButton.id = "quick-view-modal-window-basket";
-  cardContent.append(
-    closeButton,
-    cardTitle,
-    cardPrice,
-    cardImages,
-    basketButton
-  );
-  card.append(cardContent);
-  return card;
-}
-
-function createBasket(todo) {
-  const product = createElement("div", "basket-item");
-  const productTitle = createElement("h3", "basket-item__title", todo.text);
-  const productPrice = createElement(
-    "div",
-    "basket-item__price",
-    `${todo.price}$`
-  );
-
-  product.append(productTitle, productPrice);
-  return product;
-}
-
-export { containerCard, createCard, createModalCard, createBasket };
+export { createCard, addProduct, createElement };
