@@ -1,9 +1,9 @@
 import { getUUID } from "../utils/utils.js";
-import testItemFirst from "../../assets/catalog/item-watch.jpeg";
-import testItemSecond from "../../assets/catalog/item-pants-for-women.png";
-import testItemThird from "../../assets/catalog/item-down-jacket.png";
-import testItemFourth from "../../assets/catalog/item-jacket.png";
-import testItemFifth from "../../assets/catalog/item-nike.png";
+import testItemFirst from "../../assets/catalog/watch.jpeg";
+import testItemSecond from "../../assets/catalog/women's pants.png";
+import testItemThird from "../../assets/catalog/coat.png";
+import testItemFourth from "../../assets/catalog/jacket.png";
+import testItemFifth from "../../assets/catalog/nike.png";
 
 const CATALOG = [
   {
