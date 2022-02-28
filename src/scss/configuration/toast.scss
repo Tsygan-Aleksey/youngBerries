@@ -1,0 +1,42 @@
+@use "./fonts";
+@use "./colors" as color;
+
+.toast {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  max-width: 50%;
+  padding: 10px;
+  background: color.$background-toast;
+  color: color.$ligth-text-color;
+  @extend %text-style-header-20-22;
+  text-align: center;
+  border-radius: 20px;
+
+  visibility: hidden;
+  opacity: 0;
+  transform: opacity 0.5s, top 0.5s, visibility 0.5s;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__btn{
+      border: 1px solid white;
+      border-radius: 10px;
+      color: color.$ligth-text-color;
+      @extend %text-style-header-20-22;
+      background: none;
+    }
+}
+
+.toast-visible {
+  top: 100px;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+
