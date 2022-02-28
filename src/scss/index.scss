@@ -1,19 +1,7 @@
-@import "./configuration/reset.scss";
-@import "./configuration/respon.scss";
-@import "./configuration/header.scss";
-@import "./configuration/section-card.scss";
-@import "./configuration/basket.scss";
-@import "./configuration/quick-view-modal-window.scss";
-
-.root-app {
-  position: relative;
-  flex-direction: column;
-  min-height: 100vh;
-  display: flex;
-}
-.card.hide{
-  display: none;
-}
-.slider.hide{
-  display: none;
-}
+@import "./config/reset.scss";
+@import "./config/respon.scss";
+@import "./components/header";
+@import "./components/section-card";
+@import "./components/basket";
+@import "./components/quick-view-modal-window";
+@import "./components/base.scss";
