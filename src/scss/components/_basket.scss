@@ -1,5 +1,5 @@
-@use "./fonts";
-@use "./colors" as color;
+@use "../config/fonts";
+@use "../config/colors" as color;
 
 .basket-modal {
   position: fixed;
