@@ -8,23 +8,18 @@ const toast = {
       "toast",
       "Данная страница создана командой YoungBerries!"
     );
-    this.btn = createElement(
-        'button',
-        'toast__btn',
-        'X'
-    );
+    this.btn = createElement("button", "toast__btn", "X");
 
-    this.btn.addEventListener('click', () =>{
+    this.btn.addEventListener("click", () => {
       this.element.classList.remove("toast-visible");
-    })
+    });
 
-    this.element.append(this.btn)
+    this.element.append(this.btn);
     document.body.append(this.element);
     return document.body;
   },
 
   show(state) {
-
     clearTimeout(this.hideTimeOut);
 
     if (state) {
@@ -33,14 +28,13 @@ const toast = {
 
     this.hideTimeOut = setTimeout(() => {
       this.element.classList.remove("toast-visible");
-    }, 15000);
+    }, 5000);
   },
-  };
+};
 
-function initToast(){
-  toast.init()
-  toast.show('visible')
+function initToast() {
+  toast.init();
+  toast.show("visible");
 }
 
-
-export {initToast}
+export { initToast };

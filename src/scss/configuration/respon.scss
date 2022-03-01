@@ -1,4 +1,7 @@
 @media (max-width: 992px) {
+  .toast-visible {
+    top: 145px !important;
+  }
   .root-app {
     min-width: 375px;
     .header {
