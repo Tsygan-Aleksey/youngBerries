@@ -1,24 +1,22 @@
-//Поиск в header
-function searchCard (){
-  const value = document.querySelector('.header__input').value
-  const cards = document.querySelectorAll('.card');
-  //const slider = document.querySelector('.slider');
-  if(value === ''){
-    cards.forEach(function(card){
-      card.classList.remove('hide');
-      //slider.classList.remove('hide');
+import { CATALOG } from "../data/data.js";
+import { renderCards } from "../templates/templates.js";
+
+function initSearch() {
+  const search = document.querySelector(".header__input");
+  search.addEventListener("input", searchCard);
+}
+function searchCard() {
+  const value = document.querySelector(".header__input").value.trim();
+  const slider = document.querySelector(".slider");
+
+  if (value) {
+    // slider.classList.add("hide");
+    const sortedCatalog = CATALOG.filter((card) => {
+      return card.text.toLowerCase().includes(value.toLowerCase());
     });
-  }else {
-    cards.forEach(card => {
-      if (card.textContent.toLowerCase().search(value.toLowerCase()) === -1) {
-        card.classList.add('hide');
-        //slider.classList.add('hide');
-      } else{
-        card.classList.remove('hide');
-        //slider.classList.remove('hide');
-      }
-    })
+    renderCards(sortedCatalog);
+  } else {
+    // slider.classList.remove("hide");
   }
 }
-
-export {searchCard}
+export { initSearch };
