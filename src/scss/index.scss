@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "./config/reset";
 @import "./config/respon";
 @import "./components/header";
@@ -5,3 +6,26 @@
 @import "./components/basket";
 @import "./components/quick-view-modal-window";
 @import "./components/base";
+=======
+@import "./configuration/reset.scss";
+@import "./configuration/respon.scss";
+@import "./configuration/header.scss";
+@import "./configuration/section-card.scss";
+@import "./configuration/basket.scss";
+@import "./configuration/quick-view-modal-window.scss";
+@import "./configuration/standard.scss";
+@import "./configuration/toast.scss";
+
+.root-app {
+  position: relative;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+}
+.card.hide{
+  display: none;
+}
+.slider.hide{
+  display: none;
+}
+>>>>>>> dev
