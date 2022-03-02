@@ -3,17 +3,9 @@
 
 .basket-modal {
   position: fixed;
-<<<<<<< HEAD:src/scss/components/_basket.scss
   bottom: 10px;
   right: 10px;
-  
-=======
-  bottom: 0px;
-  right: 0px;
-  margin: 10px;
-  overflow-y: auto;
-  overflow-x: hidden;
->>>>>>> dev:src/scss/configuration/basket.scss
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -26,7 +18,7 @@
 
   border: 1px solid black;
   border-radius: 20px;
-  
+
   &__content {
     position: relative;
     padding: 20px;
@@ -44,13 +36,9 @@
     @extend %text-style-basket-item-title-18-20;
     color: color.$dark-text-color;
   }
-<<<<<<< HEAD:src/scss/components/_basket.scss
   &__delete-button {
     padding: 10px;
     @extend %text-style-basket-item-title-18-20;
-=======
-  &__clear-all-button {
->>>>>>> dev:src/scss/configuration/basket.scss
     border: none;
     border-radius: 10px;
     color: color.$dark-text-color;

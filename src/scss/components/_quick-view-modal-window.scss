@@ -1,7 +1,7 @@
 @use "../config/fonts";
 @use "../config/colors" as color;
 
-.quick-view-modal {
+.quick-view-modal-window {
   position: fixed;
   top: 0;
   left: 0;
@@ -27,13 +27,6 @@
     position: absolute;
     top: 20px;
     right: 20px;
-<<<<<<< HEAD:src/scss/components/_quick-view-modal-window.scss
-=======
-    border: none;
-    border-radius: 10px;
-    padding: 5px 10px;
-    cursor: pointer;
->>>>>>> dev:src/scss/configuration/quick-view-modal-window.scss
     color: color.$dark-text-color;
     background-color: color.$background-basket-button;
     cursor: pointer;
@@ -44,7 +37,6 @@
   &__title {
     margin-bottom: 20px;
     color: color.$dark-text-color;
-    max-width: 80%;
     @extend %text-style-item-title-26-28;
   }
   &__price {
