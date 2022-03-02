@@ -1,5 +1,5 @@
-@use "./fonts";
-@use "./colors" as color;
+@use "../config/fonts";
+@use "../config/colors" as color;
 
 .toast {
   position: fixed;
@@ -23,13 +23,13 @@
   align-items: center;
   justify-content: space-between;
 
-  &__btn{
-      border: 1px solid white;
-      border-radius: 10px;
-      color: color.$ligth-text-color;
-      @extend %text-style-header-20-22;
-      background: none;
-    }
+  &__btn {
+    border: 1px solid white;
+    border-radius: 10px;
+    color: color.$ligth-text-color;
+    @extend %text-style-header-20-22;
+    background: none;
+  }
 }
 
 .toast-visible {
@@ -38,5 +38,3 @@
   opacity: 1;
   visibility: visible;
 }
-
-
