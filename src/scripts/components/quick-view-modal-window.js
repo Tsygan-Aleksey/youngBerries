@@ -1,6 +1,5 @@
 import { CATALOG } from "../data/data.js";
 import { basket } from "./basket.js";
-import { containerCard } from "../index.js";
 import { createElement } from "../templates/templates.js";
 
 function createQuickViewModal(todo) {
@@ -38,7 +37,7 @@ function createQuickViewModal(todo) {
   return card;
 }
 
-function openQuickViewModal() {
+function openQuickViewWindow() {
   const ourCard = CATALOG.find((card) => {
     return (
       card.text ===
@@ -46,7 +45,11 @@ function openQuickViewModal() {
         .textContent
     );
   });
+
+  const containerCard = document.querySelector("#container-card");
+
   const section = createQuickViewModal(ourCard);
+
   containerCard.append(section);
 }
 
@@ -58,4 +61,4 @@ function handleQuickViewCard(event) {
   }
 }
 
-export { openQuickViewModal };
+export { openQuickViewWindow };

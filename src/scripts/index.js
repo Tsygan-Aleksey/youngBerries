@@ -1,15 +1,14 @@
-import {
-  searchCard
-} from "./components/search.js";
-import { addProduct } from "./templates/templates.js";
-import { initToast} from "./components/toast.js";
+// import { initSearch } from "./components/search.js";
+import { renderCards } from "./templates/templates.js";
+// import { initSlider } from "./components/slider.js";
+import { CATALOG } from "./data/data.js";
+import { basket } from "./components/basket.js";
 
-const search = document.querySelector('.header__input')
-const containerCard = document.querySelector("#container-card");
+function app() {
+  renderCards(CATALOG);
+  // initSlider();
+  // initSearch();
+  basket.render();
+}
 
-search.oninput = searchCard
-addProduct();
-
-export { containerCard };
-
-setTimeout(initToast, 5000)
+app();
