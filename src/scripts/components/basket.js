@@ -6,13 +6,10 @@ import {
 import { CATALOG } from "../data/data.js";
 import { createElement } from "../templates/templates.js";
 
-const basketProduct = document.querySelector("#basket-product");
+function Basket() {
+  this.root = document.querySelector("#basket-modal-product");
 
-function BasketCard(text, price) {
-  this.text = text;
-  this.price = `$${price}`;
-
-  this.add = function () {
+  this.add = () => {
     const basket = getStorageData(API_BASKET_KEY);
     const card = CATALOG.find((card) => {
       // card.id === event.target.parentElement.parentElement.id;
@@ -22,39 +19,41 @@ function BasketCard(text, price) {
           .firstElementChild.textContent
       );
     });
-    const element = new BasketCard(card.text, card.price);
-    basket.push(element);
+    basket.push(card);
     setStorageData(API_BASKET_KEY, basket);
     this.render();
   };
 
-  this.render = function () {
+  this.render = () => {
     const basket = getStorageData(API_BASKET_KEY);
-    basketProduct.innerHTML = "";
+    this.root.addEventListener("click", (event) => {
+      if (event.target.type === "button") {
+        this.clearBasket();
+      }
+    });
+    document.querySelector("#basket-product").innerHTML = "";
     basket.forEach((element) => {
-      const card = createBasket(element);
-      basketProduct.append(card);
+      const card = this.createBasketElement(element);
+      document.querySelector("#basket-product").append(card);
     });
     this.calcBasketSum();
   };
 
-  const modalBasketProduct = document.querySelector("#basket-modal-product");
-
   this.toggle = function () {
-    if (modalBasketProduct.classList.contains("active")) {
+    if (this.root.classList.contains("active")) {
       this.close();
     } else {
       this.open();
     }
   };
   this.open = function () {
-    modalBasketProduct.classList.add("active");
+    this.root.classList.add("active");
   };
   this.close = function () {
-    modalBasketProduct.classList.remove("active");
+    this.root.classList.remove("active");
   };
 
-  this.clearBasket = function () {
+  this.clearBasket = () => {
     const basket = getStorageData(API_BASKET_KEY);
     basket.length = 0;
     setStorageData(API_BASKET_KEY, basket);
@@ -64,11 +63,25 @@ function BasketCard(text, price) {
   this.calcBasketSum = function () {
     const basket = getStorageData(API_BASKET_KEY);
     const sumValue = basket.reduce((acc, item) => {
-      return acc + Number(item["price"].slice(1));
+      return acc + Number(item["price"]);
     }, 0);
     document.querySelector("#sum-basket").textContent = `$${sumValue}`;
   };
+
+  this.createBasketElement = function ({ text, price }) {
+    const product = createElement("div", "basket-item");
+    const productTitle = createElement("h3", "basket-item__title", text);
+    const productPrice = createElement(
+      "div",
+      "basket-item__price",
+      `$${price}`
+    );
+    product.append(productTitle, productPrice);
+    return product;
+  };
 }
+
+const basket = new Basket();
 
 //Кнопка корзина в header
 document
@@ -76,34 +89,8 @@ document
   .addEventListener("click", onHeaderBasketBtn);
 
 function onHeaderBasketBtn() {
-  const card = new BasketCard();
-  card.toggle();
-  card.render();
+  basket.toggle();
+  basket.render();
 }
 
-//Кнопка очистить корзину
-document
-  .querySelector("#clear-all-basket")
-  .addEventListener("click", onClearBasket);
-
-function onClearBasket() {
-  const card = new BasketCard();
-  card.clearBasket();
-}
-
-//Кнопка добавить в корзину на карточке
-function createBasketCard() {
-  const card = new BasketCard();
-  card.add();
-}
-
-function createBasket({ text, price }) {
-  const product = createElement("div", "basket-item");
-  const productTitle = createElement("h3", "basket-item__title", text);
-  const productPrice = createElement("div", "basket-item__price", price);
-
-  product.append(productTitle, productPrice);
-  return product;
-}
-
-export { basketProduct, BasketCard, createBasketCard, createBasket };
+export { basket };

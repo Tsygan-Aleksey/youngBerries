@@ -1,11 +1,13 @@
 import { CATALOG } from "../data/data.js";
-import { BasketCard } from "./basket.js";
+import { basket } from "./basket.js";
 import { containerCard } from "../index.js";
 import { createElement } from "../templates/templates.js";
 
-function createModalCard(todo) {
+function createQuickViewModal(todo) {
   const card = createElement("div", "quick-view-modal");
+  card.addEventListener("click", handleQuickViewCard);
   card.id = todo.id;
+
   const cardContent = createElement("div", "quick-view-modal__content");
   const closeButton = createElement(
     "button",
@@ -36,7 +38,7 @@ function createModalCard(todo) {
   return card;
 }
 
-function isOurCard() {
+function openQuickViewModal() {
   const ourCard = CATALOG.find((card) => {
     return (
       card.text ===
@@ -44,25 +46,16 @@ function isOurCard() {
         .textContent
     );
   });
-  const section = createModalCard(ourCard);
+  const section = createQuickViewModal(ourCard);
   containerCard.append(section);
+}
 
-  //Быстрый просмотр - закрыть карточку
-  document
-    .querySelector(".quick-view-modal__close-button")
-    .addEventListener("click", onCloseButton);
-  function onCloseButton() {
-    document.querySelector(".quick-view-modal").remove();
-  }
-
-  //Быстрый просмотр - добавить карточку в корзину
-  document
-    .querySelector(".quick-view-modal__basket")
-    .addEventListener("click", onModalBasket);
-  function onModalBasket() {
-    const card = new BasketCard();
-    card.add();
+function handleQuickViewCard(event) {
+  if (event.target.classList.contains("quick-view-modal__close-button")) {
+    document.querySelector(".quick-view-modal").remove(); //Быстрый просмотр - закрыть карточку
+  } else if (event.target.classList.contains("quick-view-modal__basket")) {
+    basket.add(); //Быстрый просмотр - добавить карточку в корзину
   }
 }
 
-export { isOurCard };
+export { openQuickViewModal };

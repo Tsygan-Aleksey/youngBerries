@@ -1,7 +1,7 @@
 import { CATALOG } from "../data/data";
 import { containerCard } from "../index.js";
-import { createBasketCard } from "../components/basket.js";
-import { isOurCard } from "../components/quick-view-modal-window.js";
+import { basket } from "../components/basket.js";
+import { openQuickViewModal } from "../components/quick-view-modal-window.js";
 
 const addProduct = function () {
   CATALOG.forEach((element) => {
@@ -13,10 +13,10 @@ const addProduct = function () {
 function onCard(event) {
   switch (event.target.className) {
     case "card__basket": //Кнопка "в корзину" на карточке
-      createBasketCard();
+      basket.add();
       break;
     case "card__quick-view": //Кнопка "быстрый просмотр" на карточке
-      isOurCard();
+      openQuickViewModal();
       break;
   }
 }
