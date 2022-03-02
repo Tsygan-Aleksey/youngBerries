@@ -1,14 +1,14 @@
-import { CATALOG } from "../data/data";
-import { containerCard } from "../index.js";
 import { basket } from "../components/basket.js";
-import { openQuickViewModal } from "../components/quick-view-modal-window.js";
+import { openQuickViewWindow } from "../components/quick-view-modal-window.js";
 
-const addProduct = function () {
-  CATALOG.forEach((element) => {
+function renderCards(data) {
+  const containerCard = document.querySelector("#container-card");
+  containerCard.innerHTML = "";
+  data.forEach((element) => {
     const section = createCard(element);
     containerCard.append(section);
   });
-};
+}
 
 function onCard(event) {
   switch (event.target.className) {
@@ -16,7 +16,7 @@ function onCard(event) {
       basket.add();
       break;
     case "card__quick-view": //Кнопка "быстрый просмотр" на карточке
-      openQuickViewModal();
+      openQuickViewWindow();
       break;
   }
 }
@@ -31,7 +31,7 @@ function createElement(tag, className, text = "") {
 
 function createCard(todo) {
   const card = createElement("div", "card");
-  card.addEventListener("click", onCard);
+
   card.id = todo.id;
   const cardMain = createElement("div", "card__main");
   const cardImages = createElement("img", "card__images");
@@ -47,6 +47,7 @@ function createCard(todo) {
   const cardTitle = createElement("h3", "card__info-title", todo.text);
   const cardPrice = createElement("div", "card__info-price", `$${todo.price}`);
 
+  card.addEventListener("click", onCard);
   cardMain.append(cardImages, cardBasketButton);
   cardReview.append(reviewButton);
   cardInfo.append(cardTitle, cardPrice);
@@ -55,4 +56,4 @@ function createCard(todo) {
   return card;
 }
 
-export { createCard, addProduct, createElement };
+export { createCard, renderCards, createElement };
