@@ -1,26 +1,37 @@
-@use "./fonts";
-@use "./colors" as color;
+@use "../config/fonts";
+@use "../config/colors" as color;
 
 .basket-modal {
   position: fixed;
+<<<<<<< HEAD:src/scss/components/_basket.scss
+  bottom: 10px;
+  right: 10px;
+  
+=======
   bottom: 0px;
   right: 0px;
   margin: 10px;
   overflow-y: auto;
   overflow-x: hidden;
+>>>>>>> dev:src/scss/configuration/basket.scss
   display: flex;
   align-items: center;
   justify-content: center;
   display: none;
+
   min-width: 20%;
+  max-height: 50%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
   border: 1px solid black;
   border-radius: 20px;
-  max-height: 50%;
+  
   &__content {
     position: relative;
-    background-color: color.$background-basket-modal;
-    color: color.$dark-text-color;
     padding: 20px;
+    color: color.$dark-text-color;
+    background-color: color.$background-basket-modal;
   }
   &__header {
     display: flex;
@@ -30,17 +41,21 @@
   }
   &__title {
     margin-right: 30px;
-    color: color.$dark-text-color;
     @extend %text-style-basket-item-title-18-20;
+    color: color.$dark-text-color;
   }
+<<<<<<< HEAD:src/scss/components/_basket.scss
+  &__delete-button {
+    padding: 10px;
+    @extend %text-style-basket-item-title-18-20;
+=======
   &__clear-all-button {
+>>>>>>> dev:src/scss/configuration/basket.scss
     border: none;
     border-radius: 10px;
     color: color.$dark-text-color;
     background-color: color.$background-basket-button;
-    padding: 10px;
     cursor: pointer;
-    @extend %text-style-basket-item-title-18-20;
   }
   &__product {
     margin-bottom: 20px;
@@ -64,12 +79,12 @@
     justify-content: space-between;
   }
   &__price-text {
-    color: color.$dark-text-color;
     @extend %text-style-basket-item-title-18-20;
+    color: color.$dark-text-color;
   }
   &__price-sum {
-    color: color.$dark-text-color;
     @extend %text-style-basket-item-price-18-20;
+    color: color.$dark-text-color;
   }
 }
 .display-block {

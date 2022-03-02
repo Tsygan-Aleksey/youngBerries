@@ -1,12 +1,12 @@
-@use "./fonts";
-@use "./colors" as color;
+@use "../config/fonts";
+@use "../config/colors" as color;
 
 .header {
   position: sticky;
   top: 0;
   left: 0;
-  width: 100%;
   z-index: 2;
+  width: 100%;
   padding: 20px;
   margin-bottom: 20px;
   background: -webkit-gradient(
@@ -23,40 +23,40 @@
     color.$background-header 100%
   );
   &__container {
-    max-width: 1400px;
-    padding: 0 20px;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
   }
   &__wildberries {
-    color: color.$ligth-text-color;
     text-decoration: none;
     @extend %text-style-header-34-36;
+    color: color.$ligth-text-color;
   }
   &__input {
     width: 100%;
+    padding: 10px;
     margin: 0px 50px;
+    @extend %text-style-header-20-22;
     border: none;
     border-radius: 10px;
     outline: none;
     color: color.$ligth-text-color;
     background-color: color.$background-header-input;
-    padding: 10px;
-    @extend %text-style-header-20-22;
     cursor: pointer;
   }
   &__input::placeholder {
     color: color.$ligth-text-color;
   }
   &__basket-button {
+    padding: 10px;
+    @extend %text-style-header-20-22;
     border: none;
     border-radius: 10px;
     color: color.$dark-text-color;
     background-color: color.$background-basket-button;
-    padding: 10px;
-    @extend %text-style-header-20-22;
     cursor: pointer;
   }
 }
