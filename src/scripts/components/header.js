@@ -1,5 +1,5 @@
 import { basket } from "../components/basket.js";
-import { searchCard } from "../components/search.js";
+import { handleSearchCard } from "../components/search.js";
 
 function Header() {
   this.root = document.querySelector(".header");
@@ -12,7 +12,7 @@ function Header() {
     });
     this.root.addEventListener("input", (event) => {
       if (event.target.type === "text") {
-        searchCard();
+        handleSearchCard();
       }
     });
   };

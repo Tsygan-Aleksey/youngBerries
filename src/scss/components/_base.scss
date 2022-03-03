@@ -1,15 +1,13 @@
 .root-app {
   position: relative;
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+
   min-height: 100vh;
 }
-.card.hide {
-  display: none;
-}
-.slider.hide {
-  display: none;
-}
+
 .active {
   display: block;
 }

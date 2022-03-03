@@ -1,23 +1,17 @@
 import { CATALOG } from "../data/data.js";
 import { renderCards } from "../templates/templates.js";
 
-function initSearch() {
-  const search = document.querySelector(".header__input");
-  search.addEventListener("input", searchCard);
-}
-function searchCard() {
-  const value = document.querySelector(".header__input").value.trim();
-  //   const slider = document.querySelector(".slider");
+function handleSearchCard() {
+  const input = document.querySelector(".header__input");
+  const value = input.value;
 
-  if (value) {
-    // slider.classList.add("hide");
+  if (value.trim()) {
     const sortedCatalog = CATALOG.filter((card) => {
       return card.text.toLowerCase().includes(value.toLowerCase());
     });
     renderCards(sortedCatalog);
   } else {
     renderCards(CATALOG);
-    // slider.classList.remove("hide");
   }
 }
-export { searchCard };
+export { handleSearchCard };
