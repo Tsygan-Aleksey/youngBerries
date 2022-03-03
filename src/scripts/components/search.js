@@ -16,6 +16,7 @@ function searchCard() {
     });
     renderCards(sortedCatalog);
   } else {
+    renderCards(CATALOG);
     // slider.classList.remove("hide");
   }
 }
