@@ -1,13 +1,15 @@
 const options = {
   message: "Данная страница создана командой YoungBerries!",
   root: document.querySelector("#toast"),
+  OPEN_DELAY: 15000,
+  CLOSE_DELAY: 5000,
 };
 
-function Toast({ message, root }) {
+function Toast({ message, root, OPEN_DELAY, CLOSE_DELAY }) {
   this.root = root;
   this.message = message;
-  this.OPEN_DELAY = 15000;
-  this.CLOSE_DELAY = 5000;
+  this.OPEN_DELAY = OPEN_DELAY;
+  this.CLOSE_DELAY = CLOSE_DELAY;
 
   this.init = function () {
     this.render();
