@@ -83,14 +83,4 @@ function Basket() {
 
 const basket = new Basket();
 
-//Кнопка корзина в header
-document
-  .querySelector("#modal-basket")
-  .addEventListener("click", onHeaderBasketBtn);
-
-function onHeaderBasketBtn() {
-  basket.toggle();
-  basket.render();
-}
-
 export { basket };
