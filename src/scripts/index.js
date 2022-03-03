@@ -1,42 +1,16 @@
-import { containerCard, createCard } from "./templates/templates.js";
+import { renderCards } from "./templates/templates.js";
+import { slider } from "./components/slider.js";
 import { CATALOG } from "./data/data.js";
-import {
-  onModalBasket,
-  onDeleteBasket,
-  basketModalPriceSum,
-} from "./components/basket.js";
-import {
-  createBasketCard,
-  createBigCard,
-} from "./components/quick-view-modal-window.js";
+import { basket } from "./components/basket.js";
+import { toast } from "./components/toast.js";
+import { header } from "./components/header.js";
 
-const addProduct = function () {
-  CATALOG.forEach((element) => {
-    const section = createCard(element);
-    containerCard.append(section);
-  });
-  basketModalPriceSum();
-};
-addProduct();
-
-const btnBasketCard = document.querySelector("#container-card");
-btnBasketCard.addEventListener("click", onCard);
-
-function onCard(event) {
-  switch (event.target.id) {
-    case "card-basket": //Кнопка "в корзину" на карточке
-      createBasketCard();
-      break;
-    case "card-quick-view": //Кнопка "быстрый просмотр" на карточке
-      createBigCard();
-      break;
-  }
+function app() {
+  header.init();
+  renderCards(CATALOG);
+  slider.init();
+  basket.init();
+  toast.init();
 }
 
-//Кнопка корзина в header - basket.js
-const modalBasket = document.querySelector("#modal-basket");
-modalBasket.addEventListener("click", onModalBasket);
-
-//Кнопка очистить корзину - basket.js
-const btnDeleteBasket = document.querySelector("#delete-basket");
-btnDeleteBasket.addEventListener("click", onDeleteBasket);
+document.addEventListener('DOMContentLoaded', app)
