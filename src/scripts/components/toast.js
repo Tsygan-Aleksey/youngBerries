@@ -11,7 +11,7 @@ function Toast({ message, root }) {
 
   this.init = function () {
     this.render();
-    this.openTimeout();
+    this.open();
     this.closeTimeout();
     this.root.addEventListener("click", this.handleToast);
   };
@@ -23,10 +23,6 @@ function Toast({ message, root }) {
   };
 
   this.open = function () {
-    this.root.classList.add("toast--visible");
-  };
-
-  this.openTimeout = function () {
     setTimeout(() => {
       this.root.classList.add("toast--visible");
     }, this.OPEN_DELAY);
