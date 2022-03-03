@@ -7,7 +7,7 @@ function initSearch() {
 }
 function searchCard() {
   const value = document.querySelector(".header__input").value.trim();
-  const slider = document.querySelector(".slider");
+  //   const slider = document.querySelector(".slider");
 
   if (value) {
     // slider.classList.add("hide");
@@ -19,4 +19,4 @@ function searchCard() {
     // slider.classList.remove("hide");
   }
 }
-export { initSearch };
+export { searchCard };
