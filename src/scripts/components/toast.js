@@ -1,46 +1,50 @@
-import { createElement } from "../templates/templates";
+const options = {
+  message: "Данная страница создана командой YoungBerries!",
+  root: document.querySelector("#toast"),
+  OPEN_DELAY: 15000,
+  CLOSE_DELAY: 5000,
+};
 
-const toast = {
-  init() {
-    this.hideTimeout = null;
-    this.element = createElement(
-      "div",
-      "toast",
-      "Данная страница создана командой YoungBerries!"
-    );
-    this.btn = createElement(
-        'button',
-        'toast__btn',
-        'X'
-    );
+function Toast({ message, root, OPEN_DELAY, CLOSE_DELAY }) {
+  this.root = root;
+  this.message = message;
+  this.OPEN_DELAY = OPEN_DELAY;
+  this.CLOSE_DELAY = CLOSE_DELAY;
 
-    this.btn.addEventListener('click', () =>{
-      this.element.classList.remove("toast-visible");
-    })
-
-    this.element.append(this.btn)
-    document.body.append(this.element);
-    return document.body;
-  },
-
-  show(state) {
-
-    clearTimeout(this.hideTimeOut);
-
-    if (state) {
-      this.element.classList.add(`toast-${state}`);
-    }
-
-    this.hideTimeOut = setTimeout(() => {
-      this.element.classList.remove("toast-visible");
-    }, 15000);
-  },
+  this.init = function () {
+    this.render();
+    this.open();
+    this.closeTimeout();
+    this.root.addEventListener("click", this.handleToast);
   };
 
-function initToast(){
-  toast.init()
-  toast.show('visible')
+  this.handleToast = (event) => {
+    if (event.target.type === "button") {
+      this.close();
+    }
+  };
+
+  this.open = function () {
+    setTimeout(() => {
+      this.root.classList.add("toast--visible");
+    }, this.OPEN_DELAY);
+  };
+
+  this.close = function () {
+    this.root.classList.remove("toast--visible");
+  };
+
+  this.closeTimeout = function () {
+    setTimeout(() => {
+      this.root.classList.remove("toast--visible");
+    }, this.OPEN_DELAY + this.CLOSE_DELAY);
+  };
+
+  this.render = function () {
+    root.querySelector(".toast__title").textContent = this.message;
+  };
 }
 
+const toast = new Toast(options);
 
-export {initToast}
+export { toast };

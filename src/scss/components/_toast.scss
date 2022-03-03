@@ -3,38 +3,44 @@
 
 .toast {
   position: fixed;
-  top: 0;
+  top: 100px;
   left: 0;
   right: 0;
-  margin: auto;
 
-  max-width: 50%;
-  padding: 10px;
-  background: color.$background-toast;
-  color: color.$ligth-text-color;
-  @extend %text-style-header-20-22;
-  text-align: center;
-  border-radius: 20px;
-
-  visibility: hidden;
-  opacity: 0;
-  transform: opacity 0.5s, top 0.5s, visibility 0.5s;
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  &__btn {
+  max-width: 40%;
+  min-width: 300px;
+  border-radius: 20px;
+
+  margin: auto;
+  padding: 0px 20px;
+
+  background: color.$background-toast;
+
+  z-index: 3;
+  transform: translateX(200%);
+  transition: width 2s, height 2s, transform 2s;
+
+  &__title {
+    color: color.$ligth-text-color;
+    @extend %text-style-header-20-22;
+  }
+
+  &__close-btn {
     border: 1px solid white;
     border-radius: 10px;
+    margin-left: 10px;
+    padding: 10px;
     color: color.$ligth-text-color;
     @extend %text-style-header-20-22;
     background: none;
+    cursor: pointer;
   }
 }
 
-.toast-visible {
-  top: 100px;
-
-  opacity: 1;
-  visibility: visible;
+.toast--visible {
+  transform: translateX(0);
 }
