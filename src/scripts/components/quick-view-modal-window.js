@@ -1,5 +1,5 @@
 import { CATALOG } from "../data/data.js";
-import { basket } from "./basket.js";
+import { basket } from "./Basket.js";
 import { createElement } from "../templates/templates.js";
 
 function createQuickViewModal(todo) {

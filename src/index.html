@@ -1,54 +1,94 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>youngBerries</title>
     <script src="scripts/index.js" defer type="module"></script>
-    <link rel="stylesheet" href="scss/index.scss">
-                    <!-- styles -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link rel="stylesheet" href="scss/index.scss" />
+    <!-- styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <div class="toast" id="toast">
-        <h6 class="toast__title"></h6>
-        <button class="toast__close-btn" type="button">✕</button>
+      <h6 class="toast__title"></h6>
+      <button class="toast__close-btn" type="button">✕</button>
     </div>
     <div class="root-app">
-        <header class="header">
-            <div class="header__container">
-                <a class="header__wildberries" href="#">WILDBERRIES</a>
-                <input class="header__input" type="text" placeholder="Поиск">
-                <button id="modal-basket" class="header__basket-button" type="button">Корзина</button>
+      <header class="header">
+        <div class="header__container">
+          <a class="header__wildberries" href="#">WILDBERRIES</a>
+          <input class="header__input" type="text" placeholder="Поиск" />
+          <button id="modal-basket" class="header__basket-button" type="button">
+            Корзина
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="slider">
+          <div class="slider__slide slider--active">
+            <img class="" src="./assets/slider-image/soliver-sale.jpg" alt="0" />
+          </div>
+          <div class="slider__slide">
+            <img class="" src="./assets/slider-image/men-holiday-gifts.jpg" alt="1" />
+          </div>
+          <div class="slider__slide">
+            <img class="" src="./assets/slider-image/new-collections.jpg" alt="2" />
+          </div>
+          <div class="slider__slide">
+            <img class="" src="./assets/slider-image/big-final-sale.jpg" alt="3" />
+          </div>
+          <div class="slider__navigation">
+            <div class="slider__previous-btn">
+              <img class="" src="./assets/icons/arrow.png" />
             </div>
-        </header>
-        <main class="main">
-            <div class="slider"></div>
-            <section class="section-card">
-                <p class="section-card__bestseller">Хиты продаж:</p>
-                <div id="container-card" class="card-container"></div>
-            </section>
-            <div id="basket-modal-product" class="basket-modal">
-                <div class="basket-modal__content">
-                    <div class="basket-modal__header">
-                        <h3 class="basket-modal__title">Корзина</h3>
-                        <button id="clear-all-basket" class="basket-modal__clear-all-button" type="button">Очистить корзину</button>
-                    </div>
-                    <div id="basket-product" class="basket-modal__product"></div>
-                    <div class="basket-modal__price">
-                        <p class="basket-modal__price-text">Итого:</p>
-                        <span id="sum-basket" class="basket-modal__price-sum"></span>
-                    </div>
-                </div>
+            <div class="slider__next-btn">
+              <img class="" src="./assets/icons/arrow.png" />
             </div>
-        </main>
+          </div>
+          <div class="slider__dots-container">
+            <div class="slider__dot slider--active"></div>
+            <div class="slider__dot"></div>
+            <div class="slider__dot"></div>
+            <div class="slider__dot"></div>
+          </div>
+        </div>
+        <section class="section-card">
+          <p class="section-card__bestseller">Хиты продаж:</p>
+          <div id="container-card" class="card-container"></div>
+        </section>
+        <div id="basket-modal-product" class="basket-modal">
+          <div class="basket-modal__content">
+            <div class="basket-modal__header">
+              <h3 class="basket-modal__title">Корзина</h3>
+              <button
+                id="clear-all-basket"
+                class="basket-modal__clear-all-button"
+                type="button"
+              >
+                Очистить корзину
+              </button>
+            </div>
+            <div id="basket-product" class="basket-modal__product"></div>
+            <div class="basket-modal__price">
+              <p class="basket-modal__price-text">Итого:</p>
+              <span id="sum-basket" class="basket-modal__price-sum"></span>
+            </div>
+          </div>
+        </div>
+      </main>
     </div>
-</body>
+  </body>
 </html>
-

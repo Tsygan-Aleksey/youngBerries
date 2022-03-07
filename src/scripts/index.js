@@ -1,9 +1,11 @@
 import { renderCards } from "./templates/templates.js";
-import { slider } from "./components/slider.js";
+import { slider } from "./components/Slider.js";
 import { CATALOG } from "./data/data.js";
-import { basket } from "./components/basket.js";
-import { toast } from "./components/toast.js";
-import { header } from "./components/header.js";
+import { basket } from "./components/Basket.js";
+import { toast } from "./components/Toast.js";
+import { header } from "./components/Header.js";
+
+document.addEventListener('DOMContentLoaded', app)
 
 function app() {
   header.init();
@@ -13,4 +15,4 @@ function app() {
   toast.init();
 }
 
-document.addEventListener('DOMContentLoaded', app)
+

@@ -1,4 +1,4 @@
-import { basket } from "../components/basket.js";
+import { basket } from "../components/Basket.js";
 import { openQuickViewWindow } from "../components/quick-view-modal-window.js";
 
 function renderCards(data) {

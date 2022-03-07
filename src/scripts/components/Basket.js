@@ -1,26 +1,19 @@
 import {
-  getStorageData,
-  setStorageData,
-  API_BASKET_KEY,
+  LOCAL_STORAGE_API
 } from "../services/localStorageApi.js";
 import { CATALOG } from "../data/data.js";
 import { createElement } from "../templates/templates.js";
 
 function Basket() {
-  this.root = document.querySelector("#basket-modal-product");
+  this.root = document.querySelector(".basket-modal");
 
-  this.init = () =>{
-    this.root.addEventListener("click", (event) => {
-      if (event.target.type === "button") {
-        this.clearBasket();
-      }
-    });
-    this.render()
-  }
+  this.init = () => {
+    this.root.addEventListener("click", this.handleBasket);
+    this.render();
+  };
   this.add = () => {
-    const basket = getStorageData(API_BASKET_KEY);
+    const basket = LOCAL_STORAGE_API.getStorageData();
     const card = CATALOG.find((card) => {
-      // card.id === event.target.parentElement.parentElement.id;
       return (
         card.text ===
         event.target.parentElement.parentElement.lastElementChild
@@ -28,15 +21,18 @@ function Basket() {
       );
     });
     basket.push(card);
-    setStorageData(API_BASKET_KEY, basket);
+    LOCAL_STORAGE_API.setStorageData(basket);
     this.render();
   };
   this.render = () => {
-    const basket = getStorageData(API_BASKET_KEY);
-    document.querySelector("#basket-product").innerHTML = "";
+    const basket = LOCAL_STORAGE_API.getStorageData();
+    const containerBasketCard = document.querySelector(
+      ".basket-modal__product"
+    );
+    containerBasketCard.innerHTML = "";
     basket.forEach((element) => {
       const card = this.createBasketElement(element);
-      document.querySelector("#basket-product").append(card);
+      containerBasketCard.append(card);
     });
     this.calcBasketSum();
   };
@@ -54,13 +50,13 @@ function Basket() {
     this.root.classList.remove("active");
   };
   this.clearBasket = () => {
-    const basket = getStorageData(API_BASKET_KEY);
+    const basket = LOCAL_STORAGE_API.getStorageData();
     basket.length = 0;
-    setStorageData(API_BASKET_KEY, basket);
+    LOCAL_STORAGE_API.setStorageData(basket);
     this.render();
   };
   this.calcBasketSum = function () {
-    const basket = getStorageData(API_BASKET_KEY);
+    const basket = LOCAL_STORAGE_API.getStorageData();
     const sumValue = basket.reduce((acc, item) => {
       return acc + Number(item["price"]);
     }, 0);
@@ -76,6 +72,12 @@ function Basket() {
     );
     product.append(productTitle, productPrice);
     return product;
+  };
+  this.handleBasket = (event) => {
+    switch (event.target.classList[0]) {
+      case "basket-modal__clear-all-button":
+        this.clearBasket();
+    }
   };
 }
 
