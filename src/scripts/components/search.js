@@ -4,7 +4,6 @@ import { slider } from "./Slider.js";
 
 function onSearchCard() {
   const input = document.querySelector(".header__input");
-
   const value = input.value;
 
   if (value.trim()) {
@@ -14,7 +13,7 @@ function onSearchCard() {
     });
     renderCards(sortedCatalog);
   } else {
-    slider.visibleSlider()
+    slider.visibleSlider();
     renderCards(CATALOG);
   }
 }
