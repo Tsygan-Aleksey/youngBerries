@@ -1,4 +1,4 @@
-import { CATALOG } from "../data/data.js";
+import { CATALOG} from "../services/baseService.js";
 import { basket } from "./Basket.js";
 import { createElement } from "../templates/templates.js";
 
