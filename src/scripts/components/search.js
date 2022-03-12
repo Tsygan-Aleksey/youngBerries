@@ -1,5 +1,5 @@
 import { CATALOG } from "../services/baseService.js";
-import { renderCards } from "../templates/templates.js";
+import { renderCards } from "./card.js";
 import { slider } from "./Slider.js";
 
 function onSearchCard() {

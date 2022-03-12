@@ -1,4 +1,4 @@
-import { renderCards } from "../templates/templates.js";
+import { renderCards } from "../components/card.js";
 
 const BASE_SERVICE = {
   url: "https://621b7dedfaa12ee4500f1271.mockapi.io/youngBerries/",
