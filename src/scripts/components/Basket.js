@@ -43,20 +43,19 @@ function Basket() {
 
   this.remove = () => {
     const basket = LOCAL_STORAGE_API.getStorageData();
-    basket.filter((item, index) => {
-      if (
-        item.text === event.target.parentElement.firstElementChild.textContent
-      ) {
-        basket.splice(index, 1);
-      }
+    let filterBasket = basket.filter((item) => {
+      return (
+        item.text !== event.target.parentElement.firstElementChild.textContent
+      );
     });
-    LOCAL_STORAGE_API.setStorageData(basket);
+    console.log(filterBasket);
+    LOCAL_STORAGE_API.setStorageData(filterBasket);
     this.render();
   };
 
   this.increase = () => {
     const basket = LOCAL_STORAGE_API.getStorageData();
-    basket.filter((item, index) => {
+    basket.forEach((item) => {
       if (
         item.text === event.target.parentElement.firstElementChild.textContent
       ) {
@@ -69,21 +68,24 @@ function Basket() {
 
   this.reduce = () => {
     const basket = LOCAL_STORAGE_API.getStorageData();
-    basket.filter((item, index) => {
+    for (let el of basket) {
       if (
-        item.text ===
-          event.target.parentElement.firstElementChild.textContent &&
-        item.amount > 1
+        el.text === event.target.parentElement.firstElementChild.textContent &&
+        el.amount > 1
       ) {
-        item.amount--;
+        el.amount--;
+        console.log(el.amount);
+        LOCAL_STORAGE_API.setStorageData(basket);
+        break;
       } else if (
-        item.text === event.target.parentElement.firstElementChild.textContent
+        el.text === event.target.parentElement.firstElementChild.textContent
       ) {
-        basket.splice(index, 1);
-        // this.remove(); не понял почему так не хочет
+        this.remove();
+        console.log("stop");
+        break;
       }
-    });
-    LOCAL_STORAGE_API.setStorageData(basket);
+    }
+
     this.render();
   };
 
@@ -148,16 +150,16 @@ function Basket() {
   this.createBasketElement = function ({ text, price, amount }) {
     const product = createElement("div", "basket-item");
     const productTitle = createElement("h3", "basket-item__title", text);
-    const productIncrease = createElement(
-      "button",
-      "basket-item__increase",
-      "+"
-    );
     const productReduce = createElement("button", "basket-item__reduce", "-");
     const productAmount = createElement(
       "div",
       "basket-item__amount",
-      `${amount} шт.`
+      `${amount} x $${price}`
+    );
+    const productIncrease = createElement(
+      "button",
+      "basket-item__increase",
+      "+"
     );
     const productPrice = createElement(
       "div",
@@ -176,9 +178,9 @@ function Basket() {
 
     product.append(
       productTitle,
-      productIncrease,
       productReduce,
       productAmount,
+      productIncrease,
       productPrice,
       productRemove
     );

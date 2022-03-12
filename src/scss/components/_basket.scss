@@ -20,11 +20,12 @@
   border-radius: 20px;
   margin: 10px;
 
+  background-color: color.$background-basket-modal;
+
   &__content {
     position: relative;
-    padding: 20px;
+    padding: 15px;
     color: color.$dark-text-color;
-    background-color: color.$background-basket-modal;
   }
   &__header {
     display: flex;
@@ -57,7 +58,7 @@
     &__title {
       margin-right: 10px;
       @extend %text-style-basket-item-title-18-20;
-      max-width: 220px;
+      max-width: 250px;
     }
     &__increase,
     &__reduce,
@@ -89,6 +90,7 @@
   &__price-sum {
     @extend %text-style-basket-item-price-18-20;
     color: color.$dark-text-color;
+    margin: 0px 5px;
   }
 }
 .display-block {
