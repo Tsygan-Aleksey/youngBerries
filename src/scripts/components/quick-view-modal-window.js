@@ -2,30 +2,31 @@ import { CATALOG} from "../services/baseService.js";
 import { basket } from "./Basket.js";
 import { createElement } from "../templates/templates.js";
 
-function createQuickViewModal(todo) {
+function createQuickViewModal(item) {
   const card = createElement("div", "quick-view-modal");
   card.addEventListener("click", handleQuickViewCard);
-  card.id = todo.id;
-
   const cardContent = createElement("div", "quick-view-modal__content");
   const closeButton = createElement(
-    "button",
-    "quick-view-modal__close-button",
-    "✕"
+      "button",
+      "quick-view-modal__close-button",
+      "✕"
   );
   const cardImages = createElement("img", "quick-view-modal__images");
-  cardImages.src = todo.src;
-  const cardTitle = createElement("h3", "quick-view-modal__title", todo.text);
+  const cardTitle = createElement("h3", "quick-view-modal__title", item.text);
   const cardPrice = createElement(
-    "div",
-    "quick-view-modal__price",
-    `$${todo.price}`
+      "div",
+      "quick-view-modal__price",
+      `$${item.price}`
   );
   const basketButton = createElement(
-    "button",
-    "quick-view-modal__basket",
-    "В корзину"
+      "button",
+      "quick-view-modal__basket",
+      "В корзину"
   );
+
+  card.id = item.id;
+  cardImages.src = item.src;
+
   cardContent.append(
     cardTitle,
     closeButton,
@@ -45,9 +46,7 @@ function openQuickViewWindow() {
         .textContent
     );
   });
-
   const containerCard = document.querySelector("#container-card");
-
   const section = createQuickViewModal(ourCard);
 
   containerCard.append(section);
@@ -55,9 +54,9 @@ function openQuickViewWindow() {
 
 function handleQuickViewCard(event) {
   if (event.target.classList.contains("quick-view-modal__close-button")) {
-    document.querySelector(".quick-view-modal").remove(); //Быстрый просмотр - закрыть карточку
+    document.querySelector(".quick-view-modal").remove();
   } else if (event.target.classList.contains("quick-view-modal__basket")) {
-    basket.add(); //Быстрый просмотр - добавить карточку в корзину
+    basket.add();
   }
 }
 

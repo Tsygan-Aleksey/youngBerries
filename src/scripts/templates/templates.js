@@ -12,10 +12,10 @@ function renderCards(data) {
 
 function onCard(event) {
   switch (event.target.className) {
-    case "card__basket": //Кнопка "в корзину" на карточке
+    case "card__basket":
       basket.add();
       break;
-    case "card__quick-view": //Кнопка "быстрый просмотр" на карточке
+    case "card__quick-view":
       openQuickViewWindow();
       break;
   }
