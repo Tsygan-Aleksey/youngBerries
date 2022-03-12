@@ -13,11 +13,11 @@ function Header() {
       basket.toggle();
     }
   };
-  this.onSearchInput = (event) =>{
+  this.onSearchInput = (event) => {
     if (event.target.type === "text") {
       onSearchCard();
     }
-  }
+  };
 }
 
 const header = new Header();
