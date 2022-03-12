@@ -1,6 +1,6 @@
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .root-app {
-    min-width: 375px;
+    min-width: 400px;
     .header {
       &__container {
         flex-direction: column;
@@ -15,7 +15,7 @@
       }
       &__basket-button {
         position: absolute;
-        top: 20px;
+        top: 17px;
         right: 20px;
       }
     }
@@ -26,9 +26,20 @@
       grid-gap: 30px;
       min-height: 100%;
     }
-    .card__review {
-      display: none;
+    .basket-modal {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
     }
+  }
+}
+@media (min-width: 768px) {
+  .card-container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    min-height: 100%;
   }
 }
 @media (min-width: 992px) {
@@ -39,6 +50,9 @@
     grid-gap: 30px;
     min-height: 100%;
   }
+  .card__review {
+    display: none;
+  }
 }
 @media (min-width: 1200px) {
   .card-container {
@@ -47,5 +61,8 @@
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 30px;
     min-height: 100%;
+  }
+  .card__review {
+    display: block;
   }
 }
