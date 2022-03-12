@@ -1,4 +1,4 @@
-import { CATALOG } from "../data/data.js";
+import { CATALOG } from "../services/baseService.js";
 import { renderCards } from "../templates/templates.js";
 import { slider } from "./Slider.js";
 

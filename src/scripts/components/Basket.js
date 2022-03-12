@@ -1,7 +1,5 @@
-import {
-  LOCAL_STORAGE_API
-} from "../services/localStorageApi.js";
-import { CATALOG } from "../data/data.js";
+import { LOCAL_STORAGE_API } from "../services/localStorageApi.js";
+import { CATALOG } from "../services/baseService.js";
 import { createElement } from "../templates/templates.js";
 
 function Basket() {
