@@ -1,4 +1,4 @@
-import { CATALOG} from "../services/baseService.js";
+import { CATALOG } from "../services/baseService.js";
 import { basket } from "./Basket.js";
 import { createElement } from "../templates/templates.js";
 
@@ -7,21 +7,21 @@ function createQuickViewModal(item) {
   card.addEventListener("click", handleQuickViewCard);
   const cardContent = createElement("div", "quick-view-modal__content");
   const closeButton = createElement(
-      "button",
-      "quick-view-modal__close-button",
-      "✕"
+    "button",
+    "quick-view-modal__close-button",
+    "✕"
   );
   const cardImages = createElement("img", "quick-view-modal__images");
   const cardTitle = createElement("h3", "quick-view-modal__title", item.text);
   const cardPrice = createElement(
-      "div",
-      "quick-view-modal__price",
-      `$${item.price}`
+    "div",
+    "quick-view-modal__price",
+    `$${item.price}`
   );
   const basketButton = createElement(
-      "button",
-      "quick-view-modal__basket",
-      "В корзину"
+    "button",
+    "quick-view-modal__basket",
+    "В корзину"
   );
 
   card.id = item.id;
@@ -40,11 +40,7 @@ function createQuickViewModal(item) {
 
 function openQuickViewWindow() {
   const ourCard = CATALOG.find((card) => {
-    return (
-      card.text ===
-      event.target.parentElement.nextElementSibling.firstElementChild
-        .textContent
-    );
+    return card.id === event.target.parentElement.parentElement.id;
   });
   const containerCard = document.querySelector("#container-card");
   const section = createQuickViewModal(ourCard);

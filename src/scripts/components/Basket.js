@@ -18,19 +18,15 @@ function Basket() {
   this.findCard = () => {
     const basket = LOCAL_STORAGE_API.getStorageData();
     const card = CATALOG.find((card) => {
-      return (
-        card.text ===
-        event.target.parentElement.parentElement.lastElementChild
-          .firstElementChild.textContent
-      );
+      return card.id === event.target.parentElement.parentElement.id;
     });
     if (
       basket.find((item) => {
-        return item.text === card.text;
+        return item.id === card.id;
       })
     ) {
       basket.forEach((item) => {
-        if (item.text === card.text) {
+        if (item.id === card.id) {
           item.amount++;
         }
       });
@@ -44,11 +40,11 @@ function Basket() {
   this.remove = () => {
     const basket = LOCAL_STORAGE_API.getStorageData();
     let filterBasket = basket.filter((item) => {
+      console.log(event.target.parentElement.id);
       return (
         item.text !== event.target.parentElement.firstElementChild.textContent
       );
     });
-    console.log(filterBasket);
     LOCAL_STORAGE_API.setStorageData(filterBasket);
     this.render();
   };
@@ -74,14 +70,12 @@ function Basket() {
         el.amount > 1
       ) {
         el.amount--;
-        console.log(el.amount);
         LOCAL_STORAGE_API.setStorageData(basket);
         break;
       } else if (
         el.text === event.target.parentElement.firstElementChild.textContent
       ) {
         this.remove();
-        console.log("stop");
         break;
       }
     }
