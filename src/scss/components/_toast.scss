@@ -1,9 +1,9 @@
-@use "../config/fonts";
 @use "../config/colors" as color;
+@import "../config/mixins";
 
 .toast {
   position: fixed;
-  top: 100px;
+  top: 200px;
   left: 0;
   right: 0;
 
@@ -26,16 +26,16 @@
 
   &__title {
     color: color.$ligth-text-color;
-    @extend %text-style-header-20-22;
+    @include text-style(300, 20px, 22px);
   }
 
   &__close-btn {
-    border: 1px solid white;
+    border: none;
     border-radius: 10px;
     margin-left: 10px;
-    padding: 10px;
+    padding: 12px;
     color: color.$ligth-text-color;
-    @extend %text-style-header-20-22;
+    @include text-style(300, 20px, 22px);
     background: none;
     cursor: pointer;
   }

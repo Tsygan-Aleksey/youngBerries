@@ -1,3 +1,5 @@
+@import "../config/mixins";
+
 .root-app {
   position: relative;
 
@@ -6,6 +8,10 @@
   align-items: center;
 
   min-height: 100vh;
+
+  @include mini-size {
+    min-width: 400px;
+  }
 }
 
 .active {

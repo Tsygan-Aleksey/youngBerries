@@ -1,0 +1,31 @@
+@mixin text-style($font-weight, $font-size, $line-height) {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+}
+
+@mixin small-size {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin middle-size {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin large-size {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin mini-size {
+  @media (max-width: 768px){
+    @content;
+  }
+}
