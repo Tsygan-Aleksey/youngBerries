@@ -15,16 +15,16 @@
       <a href="#Использование">Использование</a>
     </li>
     <li>
-        <a href="#project">Элементы проекта</a>
+        <a href="#Элементы-проекта">Элементы проекта</a>
         <ul>
-            <li><a href="#prerequisites">Шапка</a></li>
-            <li><a href="#installation">Слайдер</a></li>
-            <li><a href="#usage">Карточки товаров</a></li>
-            <li><a href="#roadmap">Быстрый просмотр</a></li>
-            <li><a href="#contributing">Тост</a></li>
+            <li><a href="#Шапка">Шапка</a></li>
+            <li><a href="#Слайдер">Слайдер</a></li>
+            <li><a href="#Карточки-товаров">Карточки товаров</a></li>
+            <li><a href="#Быстрый-просмотр">Быстрый просмотр</a></li>
+            <li><a href="#Тост">Тост</a></li>
         </ul>
     </li>
-    <li><a href="#license">Благодарность</a></li>
+    <li><a href="#Благодарность">Благодарность</a></li>
     
   </ol>
 </details>
