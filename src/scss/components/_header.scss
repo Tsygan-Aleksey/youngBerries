@@ -1,5 +1,5 @@
-@use "../config/fonts";
 @use "../config/colors" as color;
+@import "../config/mixins";
 
 .header {
   position: sticky;
@@ -29,35 +29,79 @@
     max-width: 1400px;
     padding: 0 20px;
     margin: 0 auto;
+
+    @include mini-size {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+    }
   }
   &__wildberries {
     text-decoration: none;
-    @extend %text-style-header-34-36;
+    @include text-style(500, 34px, 36px);
     color: color.$ligth-text-color;
+
+    @include mini-size {
+      margin-bottom: 20px;
+    }
   }
   &__input {
     width: 100%;
-    padding: 10px;
+    padding: 20px 40px 20px 44px;
     margin: 0px 50px;
-    @extend %text-style-header-20-22;
+    @include text-style(300, 20px, 22px);
     border: none;
-    border-radius: 10px;
+    border-radius: 56px;
     outline: none;
     color: color.$ligth-text-color;
     background-color: color.$background-header-input;
     cursor: pointer;
+    transition: .3s linear;
+
+    &:hover {
+      background: color.$background-header-placeholder;
+    }
+
+    &::placeholder {
+      color: color.$background-header-placeholder;
+    }
+
+    &:focus{
+      background: color.$background-header-placeholder-focus;
+      outline: none;
+      color: color.$dark-text-color;
+      text-decoration: none;
+    }
+
+    @include mini-size{
+      margin: 0 auto;
+      width: 80%;
+    }
   }
-  &__input::placeholder {
-    color: color.$ligth-text-color;
-  }
+  
   &__basket-button {
-    padding: 10px;
-    @extend %text-style-header-20-22;
+    padding: 18px;
+    @include text-style(300, 20px, 22px);
     border: none;
-    border-radius: 10px;
-    color: color.$dark-text-color;
-    background-color: color.$background-basket-button;
+    border-radius: 30px;
+    color: color.$ligth-text-color;
+    background-color: color.$background-basket;
+    opacity: 0.7;
     white-space: nowrap;
     cursor: pointer;
+    transition: .3s linear;
+
+    &:hover {
+      background: color.$background-header-placeholder;
+      color: color.$dark-text-color;
+      transform: scale(1.05);
+    }
+
+    @include mini-size {
+        position: absolute;
+        top: 17px;
+        right: 20px;
+        margin-bottom: 20px;       
+    }
   }
 }

@@ -1,5 +1,5 @@
-@use "../config/fonts";
 @use "../config/colors" as color;
+@import "../config/mixins";
 
 .basket-modal {
   position: fixed;
@@ -16,11 +16,11 @@
   overflow-y: auto;
   overflow-x: hidden;
 
-  border: 1px solid black;
+  border: .5px solid rgb(56, 56, 56);
   border-radius: 20px;
   margin: 10px;
 
-  background-color: color.$background-basket-modal;
+  background-color: color.$background-quick-view-modal-window;
 
   &__content {
     position: relative;
@@ -35,17 +35,24 @@
   }
   &__title {
     margin-right: 30px;
-    @extend %text-style-basket-item-title-18-20;
+    @include text-style(500, 20px, 20px);
     color: color.$dark-text-color;
   }
   &__clear-all-button {
     padding: 10px;
-    @extend %text-style-basket-item-title-18-20;
+    @include text-style(300, 18px, 20px);
     border: none;
     border-radius: 10px;
-    color: color.$dark-text-color;
+    color: color.$ligth-text-color;
     background-color: color.$background-basket-button;
+    opacity: 0.9;
     cursor: pointer;
+    transition: .3s linear;
+
+    &:hover{
+      opacity: 1;
+      color: color.$medium-text-color;
+    }
   }
   &__product {
     margin-bottom: 20px;
@@ -57,24 +64,31 @@
     margin-bottom: 15px;
     &__title {
       margin-right: 10px;
-      @extend %text-style-basket-item-title-18-20;
+      @include text-style(300, 18px, 20px);
       max-width: 250px;
     }
     &__increase,
     &__reduce,
     &__remove {
       padding: 5px 10px;
-      @extend %text-style-basket-item-title-18-20;
+      margin: 0px 5px;
+      @include text-style(300, 18px, 20px);
       border: none;
       border-radius: 10px;
-      color: color.$dark-text-color;
+      color: color.$ligth-text-color;
       background-color: color.$background-basket-button;
+      opacity: 0.9;
       cursor: pointer;
-      margin: 0px 5px;
+      transition: .3s linear;
+
+      &:hover{
+        opacity: 1;
+        color: color.$medium-text-color;
+      }
     }
     &__price,
     &__amount {
-      @extend %text-style-basket-item-price-18-20;
+      @include text-style(300, 18px, 20px);
       margin: 0px 5px;
     }
   }
@@ -84,13 +98,19 @@
     justify-content: space-between;
   }
   &__price-text {
-    @extend %text-style-basket-item-title-18-20;
+    @include text-style(500, 18px, 20px);
     color: color.$dark-text-color;
   }
   &__price-sum {
-    @extend %text-style-basket-item-price-18-20;
+    @include text-style(500, 18px, 20px);
     color: color.$dark-text-color;
     margin: 0px 5px;
+  }
+
+  @include mini-size {
+    position: absolute;
+    top: 17px;
+    right: 20px;
   }
 }
 .display-block {

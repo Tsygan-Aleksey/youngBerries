@@ -1,5 +1,5 @@
-@use "../config/fonts";
 @use "../config/colors" as color;
+@import "../config/mixins";
 
 .quick-view-modal {
   position: fixed;
@@ -18,10 +18,10 @@
     position: relative;
     width: 30%;
     padding: 20px;
-    border: 1px solid black;
+    border: none;
     border-radius: 20px;
     color: color.$dark-text-color;
-    background-color: color.$background-quick-view-modal-window;
+    background-color: color.$ligth-text-color;
   }
   &__close-button {
     position: absolute;
@@ -30,22 +30,26 @@
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
-    cursor: pointer;
     color: color.$dark-text-color;
     background-color: color.$background-basket-button;
+    opacity: 0.7;
+    background-color: transparent;
+    transition: .3s linear;
+    cursor: pointer;
   }
   &__close-button:hover {
-    color: color.$dark-text-color;
+    opacity: 1;
+    transform: scale(1.2);
   }
   &__title {
     margin-bottom: 20px;
     color: color.$dark-text-color;
     max-width: 80%;
-    @extend %text-style-item-title-26-28;
+    @include text-style(300, 26px, 28px);
   }
   &__price {
     color: color.$dark-text-color;
-    @extend %text-style-item-price-22-24;
+    @include text-style(normal, 22px, 24px);
   }
   &__images {
     padding: 30px;
@@ -55,12 +59,14 @@
     padding: 10px;
     border: none;
     border-radius: 10px;
-    color: color.$dark-text-color;
+    color: color.$ligth-text-color;
     background-color: color.$background-basket-button;
-    @extend %text-style-item-basket-16-18;
+    opacity: 0.8;
+    @include text-style(300, 16px, 18px);
+    transition: .3s linear;
     cursor: pointer;
   }
   &__basket:hover {
-    color: color.$dark-text-color;
+    opacity: 1;
   }
 }
