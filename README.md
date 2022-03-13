@@ -2,7 +2,7 @@
 
 
     
-  <h3 align="center">![logo](.\src\assets\readME\logo-v1.svg)</h3>
+  <h1 align="center">WILDBERRIES</h1>
 
 <details>
   <summary>Навигация</summary>
