@@ -133,7 +133,7 @@
 * [Учебник по javascript](https://learn.javascript.ru/)
 * [Рекомендации по коммитам](https://github.com/Oleg-Kolosov/Requirements-for-Commit-Names)
 * [Рекомендации по названию функций](https://github.com/Oleg-Kolosov/Recommendations-for-naming-functions)
-  * [Рекомендации по правильному написанию css](https://github.com/Oleg-Kolosov/Organization-css-property)
+* [Рекомендации по правильному написанию css](https://github.com/Oleg-Kolosov/Organization-css-property)
 * [Полезная информация developer.mozilla](https://developer.mozilla.org/en-US/)
 
 <p align="right">(<a href="#top">Вверх</a>)</p>
