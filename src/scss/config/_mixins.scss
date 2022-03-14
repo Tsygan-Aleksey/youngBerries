@@ -1,6 +1,4 @@
 @mixin text-style($font-weight, $font-size, $line-height) {
-  font-family: Roboto;
-  font-style: normal;
   font-weight: $font-weight;
   font-size: $font-size;
   line-height: $line-height;

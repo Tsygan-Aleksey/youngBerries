@@ -86,7 +86,7 @@ function Basket() {
   this.render = () => {
     const basket = LOCAL_STORAGE_API.getStorageData();
     const containerBasketCard = document.querySelector(
-      ".basket-modal__product"
+      ".basket-modal__container"
     );
     containerBasketCard.innerHTML = "";
     basket.forEach((element) => {
@@ -98,7 +98,7 @@ function Basket() {
   };
 
   this.toggle = () => {
-    if (this.root.classList.contains("active")) {
+    if (this.root.classList.contains("basket-modal--active")) {
       this.close();
     } else {
       this.open();
@@ -106,11 +106,11 @@ function Basket() {
   };
 
   this.open = function () {
-    this.root.classList.add("active");
+    this.root.classList.add("basket-modal--active");
   };
 
   this.close = function () {
-    this.root.classList.remove("active");
+    this.root.classList.remove("basket-modal--active");
   };
 
   this.clearBasket = () => {

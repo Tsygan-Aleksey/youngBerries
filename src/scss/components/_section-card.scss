@@ -6,12 +6,12 @@
   margin: 0 auto;
   padding: 0 20px;
 
-  &__bestseller {
+  &__title {
     margin-bottom: 30px;
     color: color.$dark-text-color;
     @include text-style(normal, 26px, 28px);
   }
-  .card-container {
+  .cards-container {
     .card {
       position: relative;
       height: 100%;

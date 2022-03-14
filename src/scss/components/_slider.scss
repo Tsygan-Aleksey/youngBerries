@@ -5,12 +5,15 @@
 
   max-width: 1400px;
   min-height: 350px;
+  margin: 15px;
 
   overflow: hidden;
   box-sizing: border-box;
   border-radius: 15px;
-  margin: 15px;
 
+  &--hide{
+    display: none;
+  }
   &__slide {
     position: absolute;
 
@@ -19,7 +22,12 @@
 
     clip-path: inset(50% 50% 50% 50%);
 
-    img {
+    &--active {
+      clip-path: inset(0 0 0 0);
+      transition: 0.2s;
+    }
+
+    .slider__image {
       position: absolute;
 
       width: 100%;
@@ -28,10 +36,7 @@
       object-fit: cover;
     }
   }
-  .slider--active {
-    clip-path: inset(0 0 0 0);
-    transition: 0.2s;
-  }
+
   &__navigation {
     display: flex;
     align-items: center;
@@ -42,11 +47,13 @@
 
     transition: opacity 0.5s ease;
   }
-  .slider:hover &__navigation {
+
+  .slider:hover &__navigation{
     opacity: 1;
   }
+
   &__previous-btn {
-    transform: rotateY(0.5turn);
+    transform: rotate(0.5turn);
   }
   &__previous-btn,
   &__next-btn {
@@ -60,7 +67,7 @@
     height: 45px;
     font-size: 2em;
     margin: 0 10px;
-    padding: 15px;
+    padding: 10px;
 
     color: color.$dark-text-color;
     background: color.$background-slider-arrow;
@@ -75,12 +82,11 @@
     }
   }
   &__dots-container {
-    z-index: 1;
 
     display: flex;
     justify-content: center;
+
     .slider__dot {
-      z-index: 1;
 
       width: 10px;
       height: 10px;
@@ -92,7 +98,7 @@
 
       cursor: pointer;
     }
-    .slider--active {
+    .slider__dot--active {
       background: color.$background-slider-dot-active;
     }
   }

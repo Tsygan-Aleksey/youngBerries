@@ -2,7 +2,7 @@
 
 .root-app {
   position: relative;
-
+  font-family: 'Roboto', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,10 +14,3 @@
   }
 }
 
-.active {
-  display: block;
-}
-
-.hide {
-  display: none;
-}

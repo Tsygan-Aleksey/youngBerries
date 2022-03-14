@@ -22,6 +22,9 @@
 
   background-color: color.$background-quick-view-modal-window;
 
+  &--active{
+    display: block;
+  }
   &__content {
     position: relative;
     padding: 15px;
@@ -54,7 +57,7 @@
       color: color.$medium-text-color;
     }
   }
-  &__product {
+  &__container {
     margin-bottom: 20px;
   }
   .basket-item {

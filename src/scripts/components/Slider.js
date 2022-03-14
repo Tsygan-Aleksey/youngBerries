@@ -26,10 +26,10 @@ function Slider() {
   };
   this.removeClassActive = () => {
     this.slides.forEach((slide) => {
-      slide.classList.remove("slider--active");
+      slide.classList.remove("slider__slide--active");
     });
     this.dots.forEach((dot) => {
-      dot.classList.remove("slider--active");
+      dot.classList.remove("slider__dot--active");
     });
   };
   this.nextSlide = () => {
@@ -40,8 +40,8 @@ function Slider() {
       this.slideNumber = 0;
     }
 
-    this.dots[this.slideNumber].classList.add("slider--active");
-    this.slides[this.slideNumber].classList.add("slider--active");
+    this.dots[this.slideNumber].classList.add("slider__dot--active");
+    this.slides[this.slideNumber].classList.add("slider__slide--active");
   };
   this.previousSlide = () => {
     this.removeClassActive();
@@ -51,16 +51,16 @@ function Slider() {
       this.slideNumber = this.totalSlides - 1;
     }
 
-    this.dots[this.slideNumber].classList.add("slider--active");
-    this.slides[this.slideNumber].classList.add("slider--active");
+    this.dots[this.slideNumber].classList.add("slider__dot--active");
+    this.slides[this.slideNumber].classList.add("slider__slide--active");
   };
   this.selectedSlide = (event) => {
     this.removeClassActive();
     const SlideNumber = this.dots.findIndex((dot) => {
       return event.target.classList === dot.classList;
     });
-    this.dots[SlideNumber].classList.add("slider--active");
-    this.slides[SlideNumber].classList.add("slider--active");
+    this.dots[SlideNumber].classList.add("slider__dot--active");
+    this.slides[SlideNumber].classList.add("slider__slide--active");
   };
   this.startInterval = () => {
     this.interval = setInterval(this.nextSlide, 10000);
@@ -69,10 +69,10 @@ function Slider() {
     clearInterval(this.interval);
   };
   this.hideSlider = () => {
-    this.root.classList.add("hide");
+    this.root.classList.add("slider--hide");
   };
   this.visibleSlider = () => {
-    this.root.classList.remove("hide");
+    this.root.classList.remove("slider--hide");
   };
 }
 const slider = new Slider();
