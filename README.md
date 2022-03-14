@@ -27,7 +27,7 @@
 
 ## О проекте
 
-[![](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/wildberries.jpg)]()
+[<img alt="шапка" src="D:\developer\youngBerries\readME-image\wildberries.jpg"/>]()
 
 Проект "YoungWildberries"- это упрощенная версия известного международного интернет-магазина WILDBERRIES.
 
@@ -57,14 +57,14 @@
 
 ## Шапка
 
-[![](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/header.jpg)]()
+[<img src="D:\developer\youngBerries\readME-image\header.jpg"/>]()
 
 1. Логотип сайта.
 2. Поиск - с помощью которого Вы легко найдете нужный товар. Он реализован таким образом, что при введении первого символа он сразу начинает подбирать товар.
 3. Корзина - это кнопка для открытия модального окна с товарами, которые Вы выберите для себя и возможно захотите купить.
 
    Модальное окне с товарами:
-   [![Корзина](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/basket.jpg)]()
+   [<img alt="Корзина" src="D:\developer\youngBerries\readME-image\basket.jpg"/>]()
 
 - Здесь отображается наименование товара, его цена, количество и общая сумма всех товаров.
 - Кнопки для увеличения и уменьшения количества товаров, кро этого можно удалить тот или иной товар, либо очистить корзину полность.
@@ -72,7 +72,7 @@
 
 ## Слайдер
 
-[![](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/slider.jpg)]()
+[<img src="D:\developer\youngBerries\readME-image\slider.jpg"/>]()
 
 Слева и справа есть кнопки для переключения между слайдами. Внизу слайдера по центр есть кнопки в виде точек, для быстрого переключения к интересующему Вас слайду
 
@@ -80,7 +80,7 @@
 
 Под слайдером находится раздел Хиты продаж, в котором располагаются товары
 
-[![](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/card.jpg)]() //Общее фото карточек товаров, где их несколько
+[<img height="110" src="D:\developer\youngBerries\readME-image\cards.jpg" width="400"/>]() 
 
 - У каждой карточки товара есть наименвание, цена и изоброжение
 - На карточке есть кнопка "В корзину" для быстрого добавления товара в корзину
@@ -88,12 +88,12 @@
 
 ## Быстрый просмотр
 
-[![](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/quick-view.jpg)]()
+[<img src="D:\developer\youngBerries\readME-image\quick-view.jpg"/>]()
 Окно быстрого просмотра представляет собой увеличенную карточку товара c информацией о ней. В перспективе в данном окне будет появляться более подробная информация о товаре.
 
 ## Тост
 
-[![](https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/src/assets/readME/toast.jpg)]()
+[<img src="D:\developer\youngBerries\readME-image\toast.jpg"/>]()
 Так же на проекте реализован тост. Тост — это ненавязчивое уведомление, имитирующие push-уведомления. В проекте тост несет в себе информацию он том, кем был созда сайт. Оно появляется спусня 15 секунд после загрузки сайта
 
 На нашем проекте мы использовали
@@ -116,12 +116,13 @@
 
 <p align="right">(<a href="#top">Вверх</a>)</p>
 
-## Благодарность
+# Благодарность
 
 Отдельная благодарность нашему преподавателю за невероятную помощь при создании проекта.
 
 Олег - [Oleg-Kolosov](https://github.com/Oleg-Kolosov)
 
+Полезные ссылки:
 - [Учебник по javascript](https://learn.javascript.ru/)
 - [Рекомендации по коммитам](https://github.com/Oleg-Kolosov/Requirements-for-Commit-Names)
 - [Рекомендации по названию функций](https://github.com/Oleg-Kolosov/Recommendations-for-naming-functions)
