@@ -28,7 +28,7 @@
 ## О проекте
 Проект "YoungWildberries"- это упрощенная версия известного международного интернет-магазина WILDBERRIES.
 
-[<img alt="проект" src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/wildberries.jpg"/>]()
+[<img alt="проект" src="./readME-image/wildberries.jpg"/>]()
 
 <p align="right">(<a href="#top">Вверх</a>)</p>
 
@@ -56,13 +56,13 @@
 
 ## Шапка
 
-[<img src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/header.jpg"/>]()
+[<img src="./readME-image/header.jpg"/>]()
 
 1. Логотип сайта.
 2. Поиск - с помощью которого Вы легко найдете нужный товар. Он реализован таким образом, что при введении первого символа он сразу начинает подбирать товар.
 3. Корзина - это кнопка для открытия модального окна с товарами, которые Вы выберите для себя и возможно захотите купить.
 
-    [<img height="170" alt="Корзина" width="500" src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/basket.jpg"/>]()
+    [<img height="170" alt="Корзина" width="500" src="./readME-image/basket.jpg"/>]()
     
    Модальное окно с товарами:
   
@@ -72,7 +72,7 @@
 
 ## Слайдер
 
-[<img alt="слайдер" src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/slider.jpg"/>]()
+[<img alt="слайдер" src="./readME-image/slider.jpg"/>]()
 
 Слева и справа есть кнопки для переключения между слайдами. Внизу слайдера по центру есть кнопки в виде точек, для быстрого переключения к интересующему Вас слайду
 
@@ -80,7 +80,7 @@
 
 Под слайдером находится раздел "Хиты продаж", в котором располагаются товары
 
-[<img alt="карточки" height="" src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/cards.jpg" width=""/>]() 
+[<img alt="карточки" height="" src="./readME-image/cards.jpg" width=""/>]() 
 
 - У каждой карточки товара есть наименование, цена и изображение
 - На карточке есть кнопка "В корзину" для быстрого добавления товара в корзину
@@ -88,13 +88,13 @@
 
 ## Быстрый просмотр
 
-[<img height="500" width="300" alt="быстрый просмотр" src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/quick-view.jpg"/>]()
+[<img height="500" width="300" alt="быстрый просмотр" src="./readME-image/quick-view.jpg"/>]()
 
 Окно быстрого просмотра представляет собой увеличенную карточку товара с информацией о ней. В перспективе в данном окне будет появляться более подробная информация о товаре.
 
 ## Тост
 
-[<img alt="тост" height="100" width="500" src="https://github.com/Tsygan-Aleksey/youngBerries/blob/dev-YB-25/readME-image/toast.jpg"/>]()
+[<img alt="тост" height="100" width="500" src="./readME-image/toast.jpg"/>]()
 
 Так же на проекте реализован тост. Тост — это ненавязчивое уведомление, имитирующие push-уведомления. В проекте тост несет в себе информацию он том, кем был создан сайт. Оно появляется спустя 15 секунд после загрузки сайта
 
