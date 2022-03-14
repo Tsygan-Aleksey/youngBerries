@@ -36,8 +36,10 @@
         padding: 0px;
     }
   }
-  &__wildberries {
+  &__logo {
+
     text-decoration: none;
+    text-transform: uppercase;
     @include text-style(500, 34px, 36px);
     color: color.$ligth-text-color;
 
