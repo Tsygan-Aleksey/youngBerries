@@ -6,26 +6,29 @@
   top: 0;
   left: 0;
   z-index: 2;
+
   width: 100%;
   padding: 20px;
   margin-bottom: 20px;
+
   background: -webkit-gradient(
       linear,
       left top,
       right top,
-      from(color.$background-basket-button),
-      to(color.$background-header)
+      from(color.$btn-bg-color),
+      to(color.$bg-primary-color)
     )
     no-repeat;
   background-color: linear-gradient(
     to right,
-    color.$background-basket-button 0,
-    color.$background-header 100%
+    color.$btn-bg-color 0,
+    color.$bg-primary-color 100%
   );
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     max-width: 1400px;
     padding: 0 20px;
     margin: 0 auto;
@@ -37,10 +40,10 @@
     }
   }
   &__logo {
-
     text-decoration: none;
     text-transform: uppercase;
     @include text-style(500, 34px, 36px);
+
     color: color.$ligth-text-color;
 
     @include mini-size {
@@ -51,50 +54,58 @@
     width: 100%;
     padding: 20px 40px 20px 44px;
     margin: 0px 50px;
+    
     @include text-style(300, 20px, 22px);
+
     border: none;
     border-radius: 56px;
     outline: none;
     color: color.$ligth-text-color;
-    background-color: color.$background-header-input;
-    cursor: pointer;
+    background-color: color.$bg-input;
+
     transition: .3s linear;
 
+    cursor: pointer;
+
     &:hover {
-      background: color.$background-header-placeholder;
+      background: color.$bg-placeholder;
     }
 
     &::placeholder {
-      color: color.$background-header-placeholder;
+      color: color.$bg-placeholder;
     }
 
     &:focus{
-      background: color.$background-header-placeholder-focus;
-      outline: none;
-      color: color.$dark-text-color;
       text-decoration: none;
+      outline: none;
+      background: color.$bg-placeholder-focus;
+      color: color.$dark-text-color;
     }
 
     @include mini-size{
-      margin: 0 auto;
       width: 80%;
+      margin: 0 auto;
     }
   }
   
   &__basket-button {
     padding: 18px;
+
     @include text-style(300, 20px, 22px);
+
     border: none;
     border-radius: 30px;
     color: color.$ligth-text-color;
-    background-color: color.$background-basket;
+    background-color: color.$bg-primary-light-color;
     opacity: 0.7;
     white-space: nowrap;
-    cursor: pointer;
+
     transition: .3s linear;
 
+    cursor: pointer;
+
     &:hover {
-      background: color.$background-header-placeholder;
+      background: color.$bg-placeholder;
       color: color.$dark-text-color;
       transform: scale(1.05);
     }
@@ -103,6 +114,7 @@
         position: absolute;
         top: 17px;
         right: 20px;
+
         margin-bottom: 20px;       
     }
   }

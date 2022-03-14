@@ -8,8 +8,8 @@
 
   &__title {
     margin-bottom: 30px;
-    color: color.$dark-text-color;
     @include text-style(normal, 26px, 28px);
+    color: color.$dark-text-color;
   }
   .cards-container {
     .card {
@@ -29,18 +29,23 @@
         position: absolute;
         bottom: 1%;
         right: 1%;
+
         padding: 0.2em 1em;
+
         @include text-style(300, 16px, 18px);
+
         border: none;
         border-radius: 50px;
         color: color.$ligth-text-color;
-        background-color: color.$background-basket-button;
         opacity: 0.8;
-        cursor: pointer;
+        background-color: color.$btn-bg-color;
+
         transition: 0.3s ease-in-out;
 
+        cursor: pointer;
+
         &:hover{
-          background-color: rgb(225, 33, 193);
+          background-color: color.$btn-bg-active-light;
           opacity: 1;
         }
       }
@@ -49,8 +54,10 @@
         position: absolute;
         left: 50%;
         top: 50%;
-        opacity: 0;
+
         transform: translate(-50%, -50%);
+        opacity: 0;
+
         transition: 0.3s ease-in-out;
 
         @include middle-size {
@@ -64,18 +71,23 @@
 
       &__quick-view {
         position: relative;
+
         padding: 0.5em 1em;
+
         text-align: center;
         @include text-style(300, 16px, 18px);
         white-space: nowrap;
         text-transform: uppercase;
+
         overflow: hidden;
         outline: none;
         border: none;
         border-radius: 50px;
-        color: color.$color-text-style-quick-view;
+        color: color.$dark-grey-text-color;
         opacity: 0.7;
+
         transition: 0.3s ease-in-out;
+
         cursor: pointer;
       }
 
@@ -91,8 +103,8 @@
       }
 
       &__info-title {
-        @include text-style(300, 20px, 22px);
         margin-bottom: 10px;
+        @include text-style(300, 20px, 22px);
       }
 
       &__info-price {
@@ -109,6 +121,7 @@
       grid-template-rows: 1fr;
       grid-template-columns: repeat(3, 1fr);
       grid-gap: 30px;
+
       min-height: 100%;
     }
 
@@ -117,6 +130,7 @@
       grid-template-rows: 1fr;
       grid-template-columns: repeat(4, 1fr);
       grid-gap: 30px;
+
       min-height: 100%;
     }
 
@@ -125,6 +139,7 @@
       grid-template-rows: 1fr;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 30px;
+
       min-height: 100%;
     }
 
@@ -133,6 +148,7 @@
       grid-template-rows: 1fr;
       grid-template-columns: 1fr 1fr;
       grid-gap: 30px;
+      
       min-height: 100%;
     }
   }
