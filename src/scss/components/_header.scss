@@ -31,20 +31,19 @@
     margin: 0 auto;
 
     @include mini-size {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
     }
   }
   &__logo {
-
     text-decoration: none;
     text-transform: uppercase;
     @include text-style(500, 34px, 36px);
     color: color.$ligth-text-color;
 
     @include mini-size {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
   }
   &__input {
@@ -58,7 +57,7 @@
     color: color.$ligth-text-color;
     background-color: color.$background-header-input;
     cursor: pointer;
-    transition: .3s linear;
+    transition: 0.3s linear;
 
     &:hover {
       background: color.$background-header-placeholder;
@@ -68,19 +67,20 @@
       color: color.$background-header-placeholder;
     }
 
-    &:focus{
+    &:focus {
       background: color.$background-header-placeholder-focus;
       outline: none;
       color: color.$dark-text-color;
       text-decoration: none;
     }
 
-    @include mini-size{
+    @include mini-size {
       margin: 0 auto;
-      width: 80%;
+      margin-top: 15px;
+      width: 100%;
     }
   }
-  
+
   &__basket-button {
     padding: 18px;
     @include text-style(300, 20px, 22px);
@@ -91,7 +91,7 @@
     opacity: 0.7;
     white-space: nowrap;
     cursor: pointer;
-    transition: .3s linear;
+    transition: 0.3s linear;
 
     &:hover {
       background: color.$background-header-placeholder;
@@ -100,10 +100,9 @@
     }
 
     @include mini-size {
-        position: absolute;
-        top: 17px;
-        right: 20px;
-        margin-bottom: 20px;       
+      position: absolute;
+      top: 10px;
+      right: 20px;
     }
   }
 }

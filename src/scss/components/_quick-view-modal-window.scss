@@ -34,7 +34,7 @@
     background-color: color.$background-basket-button;
     opacity: 0.7;
     background-color: transparent;
-    transition: .3s linear;
+    transition: 0.3s linear;
     cursor: pointer;
   }
   &__close-button:hover {
@@ -63,7 +63,7 @@
     background-color: color.$background-basket-button;
     opacity: 0.8;
     @include text-style(300, 16px, 18px);
-    transition: .3s linear;
+    transition: 0.3s linear;
     cursor: pointer;
   }
   &__basket:hover {

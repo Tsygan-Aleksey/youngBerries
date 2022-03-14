@@ -39,7 +39,7 @@
         cursor: pointer;
         transition: 0.3s ease-in-out;
 
-        &:hover{
+        &:hover {
           background-color: rgb(225, 33, 193);
           opacity: 1;
         }
@@ -53,13 +53,19 @@
         transform: translate(-50%, -50%);
         transition: 0.3s ease-in-out;
 
+        @include mini-size {
+          display: none;
+        }
+        @mixin small-size {
+          display: none;
+        }
         @include middle-size {
           display: none;
         }
-
-        @include large-size{
+        @include large-size {
           display: block;
         }
+        //Не работает при 3 колонках
       }
 
       &__quick-view {
@@ -80,7 +86,7 @@
       }
 
       &__quick-view:hover {
-        color: color.$ligth-text-color;
+        color: color.$dark-text-color;
         opacity: 1;
       }
 
@@ -98,7 +104,6 @@
       &__info-price {
         @include text-style(500, 18px, 20px);
       }
-
     }
     .card:hover .card__review {
       opacity: 1;

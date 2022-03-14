@@ -16,13 +16,13 @@
   overflow-y: auto;
   overflow-x: hidden;
 
-  border: .5px solid rgb(56, 56, 56);
+  border: 3px solid rgb(56, 56, 56);
   border-radius: 20px;
   margin: 10px;
 
   background-color: color.$background-quick-view-modal-window;
 
-  &--active{
+  &--active {
     display: block;
   }
   &__content {
@@ -38,7 +38,7 @@
   }
   &__title {
     margin-right: 30px;
-    @include text-style(500, 20px, 20px);
+    @include text-style(500, 24px, 22px);
     color: color.$dark-text-color;
   }
   &__clear-all-button {
@@ -50,9 +50,9 @@
     background-color: color.$background-basket-button;
     opacity: 0.9;
     cursor: pointer;
-    transition: .3s linear;
+    transition: 0.3s linear;
 
-    &:hover{
+    &:hover {
       opacity: 1;
       color: color.$medium-text-color;
     }
@@ -82,14 +82,17 @@
       background-color: color.$background-basket-button;
       opacity: 0.9;
       cursor: pointer;
-      transition: .3s linear;
+      transition: 0.3s linear;
 
-      &:hover{
+      &:hover {
         opacity: 1;
         color: color.$medium-text-color;
       }
     }
-    &__price,
+    &__price {
+      @include text-style(500, 18px, 20px);
+      margin: 0px 5px;
+    }
     &__amount {
       @include text-style(300, 18px, 20px);
       margin: 0px 5px;
@@ -101,19 +104,22 @@
     justify-content: space-between;
   }
   &__price-text {
-    @include text-style(500, 18px, 20px);
+    @include text-style(500, 22px, 20px);
     color: color.$dark-text-color;
   }
   &__price-sum {
-    @include text-style(500, 18px, 20px);
+    @include text-style(500, 22px, 20px);
     color: color.$dark-text-color;
     margin: 0px 5px;
   }
 
   @include mini-size {
-    position: absolute;
-    top: 17px;
-    right: 20px;
+    width: 100%;
+    min-height: 40%;
+    max-height: 60%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin: 0;
   }
 }
 .display-block {
