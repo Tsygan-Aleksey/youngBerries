@@ -2,133 +2,122 @@
 
   <h1 align="center">WILDBERRIES</h1>
 
-<details>
-  <summary>Навигация</summary>
   <ol>
     <li>
-      <a href="#О-проекте">О проекте</a>
+      <a href="#About-the-project"># About the project</a>
     </li>
-    <li><a href="#Установка-и-запуск проекта">Установка и запуск проекта</a></li>
+    <li><a href="#Installing-and-running-the-project">Installing and running the project</a></li>
     <li>
-        <a href="#Элементы-проекта">Элементы проекта</a>
+        <a href="#Project-elements">Project elements</a>
         <ul>
-            <li><a href="#Шапка">Шапка</a></li>
-            <li><a href="#Слайдер">Слайдер</a></li>
-            <li><a href="#Карточки-товаров">Карточки товаров</a></li>
-            <li><a href="#Быстрый-просмотр">Быстрый просмотр</a></li>
-            <li><a href="#Тост">Тост</a></li>
+            <li><a href="#Header">Header</a></li>
+            <li><a href="#Slider">Slider</a></li>
+            <li><a href="#Product-cards">Product cards</a></li>
+            <li><a href="#Quick-view-window">Quick view window</a></li>
+            <li><a href="#Toast">Toast</a></li>
         </ul>
     </li>
-    <li><a href="#Команда">Команда</a></li>
-    <li><a href="#Благодарность">Благодарность</a></li>
+    <li><a href="#Our team">Our-team</a></li>
+    <li><a href="#acknowledgment">Acknowledgment</a></li>
     
   </ol>
-</details>
 
-## О проекте
-Проект "YoungWildberries"- это упрощенная версия известного международного интернет-магазина WILDBERRIES.
 
-[<img alt="проект" src="./readME-image/wildberries.jpg"/>]()
+## About the project
+The "YoungWildberries" project is a simplified version of the well-known international online store WILDBERRIES.
 
-<p align="right">(<a href="#top">Вверх</a>)</p>
+[<img alt="project" src="./readME-image/wildberries.jpg"/>]()
 
-### Установка и запуск проекта
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Необходимо выполнить следующие действия:
+### Installing and running the project
 
-1. Скопировать репозиторий
+You need to do the following:
+
+1. Copy repository
    ```sh
    git clone https://github.com/Tsygan-Aleksey/youngBerries.git
    ```
-2. Установить NPM модули
+2. Install Node modules
    ```sh
    npm install
    ```
-3. Запустить проект
+3. Build and run project
    ```sh
    npm run dev
    ```
-   <p align="right">(<a href="#top">Вверх</a>)</p>
+   <p align="right">(<a href="#top">back to top</a>)</p>
 
-<div id="usage"></div>
+# Project elements
 
-# Элементы проекта
+## Header
 
-## Шапка
+[<img alt="header" src="./readME-image/header.jpg"/>]()
 
-[<img src="./readME-image/header.jpg"/>]()
+1. Site logo.
+2. Search - with which you can easily find the right product. It is implemented in such a way that when you enter the first character, it immediately starts picking up the product.
+3. Cart is a button to open a modal window with products that you choose for yourself and may want to buy.
 
-1. Логотип сайта.
-2. Поиск - с помощью которого Вы легко найдете нужный товар. Он реализован таким образом, что при введении первого символа он сразу начинает подбирать товар.
-3. Корзина - это кнопка для открытия модального окна с товарами, которые Вы выберите для себя и возможно захотите купить.
+    [<img height="170" alt="basket" width="500" src="./readME-image/basket.jpg"/>]()
 
-    [<img height="170" alt="Корзина" width="500" src="./readME-image/basket.jpg"/>]()
-    
-   Модальное окно с товарами:
-  
-    - Здесь отображается наименование товара, его цена, количество и общая сумма всех товаров.
-    - Кнопки для увеличения и уменьшения количества товаров, кроме этого можно удалить тот или иной товар, либо очистить корзину полностью.
-    - После перезагрузки сайта, данные в корзине останутся без изменений, это позволит Вам в любой момент вернуться к заказу.
+   Modal window with products:
 
-## Слайдер
+   - It displays the name of the product, its price, quantity and total amount of all products.
+   - Buttons to increase and decrease the number of products, in addition, you can delete this or that product, or empty the basket completely.
+   - After reloading the site, the data in the basket will remain unchanged, this will allow you to return to the order at any time.
 
-[<img alt="слайдер" src="./readME-image/slider.jpg"/>]()
+## Slider
 
-Слева и справа есть кнопки для переключения между слайдами. Внизу слайдера по центру есть кнопки в виде точек, для быстрого переключения к интересующему Вас слайду
+[<img alt="slider" src="./readME-image/slider.jpg"/>]()
 
-## Карточки товаров
+There are buttons on the left and right to switch between slides. At the bottom of the slider in the center there are buttons in the form of dots to quickly switch to the slide you are interested in.
 
-Под слайдером находится раздел "Хиты продаж", в котором располагаются товары
+## Product cards
 
-[<img alt="карточки" height="" src="./readME-image/cards.jpg" width=""/>]() 
+Below the slider is the "Bestsellers" section, which contains products.
 
-- У каждой карточки товара есть наименование, цена и изображение
-- На карточке есть кнопка "В корзину" для быстрого добавления товара в корзину
-- Для более подробной информации о товаре, можно навести на карточку и нажать кнопку "быстрый просмотр", откроется модальное окно с более подробной информацией.
+[<img alt="cards" height="" src="./readME-image/cards.jpg" width=""/>]() 
 
-## Быстрый просмотр
+- Each product card has a name, price and image
+- On the card there is a button "Add to cart" to quickly add goods to the cart
+- For more detailed information about the product, you can hover over the card and click the "quick view" button, a modal window will open with more detailed information.
 
-[<img height="500" width="300" alt="быстрый просмотр" src="./readME-image/quick-view.jpg"/>]()
+## Quick view window
 
-Окно быстрого просмотра представляет собой увеличенную карточку товара с информацией о ней. В перспективе в данном окне будет появляться более подробная информация о товаре.
+[<img height="500" width="300" alt="Quick view window" src="./readME-image/quick-view.jpg"/>]()
 
-## Тост
+The quick view window is an enlarged product card with information about it. More product information will be available in the near future.
+
+## Toast
 
 [<img alt="тост" height="100" width="500" src="./readME-image/toast.jpg"/>]()
 
-Так же на проекте реализован тост. Тост — это ненавязчивое уведомление, имитирующие push-уведомления. В проекте тост несет в себе информацию он том, кем был создан сайт. Оно появляется спустя 15 секунд после загрузки сайта
+A toast was also implemented on the project. Toast is a non-intrusive notification that mimics push notifications. In the project, the toast carries information about who created the site. It appears 15 seconds after the site loads.
 
-На нашем проекте мы использовали
+In our project we used:
 
 - scss
 - javascript
+- parcel-bundler
+   * parcel-plugin-static-files-copy
+   
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-В javascript использовали функции конструкторы, классы, так же наши карточки мы получаем с сервера на котором они хранятся.
+## Our team
 
-<p align="right">(<a href="#top">Вверх</a>)</p>
+- Aleksey - [@linkedIn](https://www.linkedin.com/in/aleksey-tsygan-978a6a228/) - newrety1996@gmail.com
+- Alexander [Zhibul-Alexander](https://github.com/Zhibul-Alexander) - alexanderzhibul@mail.ru
+- Kirill [Kirill-Bukin](https://github.com/Kirill-Bukin)
+- Kate [Kate-Levchuk](https://github.com/Kate-Levchuk)
 
-## Команда
+Project link: [https://github.com/Tsygan-Aleksey/youngBerries](https://github.com/Tsygan-Aleksey/youngBerries)
 
-- Алексей - [@linkedIn](https://www.linkedin.com/in/aleksey-tsygan-978a6a228/) - newrety1996@gmail.com
-- Александр [Zhibul-Alexander](https://github.com/Zhibul-Alexander) - alexanderzhibul@mail.ru
-- Киррил [Kirill-Bukin](https://github.com/Kirill-Bukin)
-- Екатерина [Kate-Levchuk](https://github.com/Kate-Levchuk)
+<p align="right">(<a href="#top">back to top</a>)</p>
 
-Ссылка на проект: [https://github.com/Tsygan-Aleksey/youngBerries](https://github.com/Tsygan-Aleksey/youngBerries)
+# Acknowledgment
 
-<p align="right">(<a href="#top">Вверх</a>)</p>
+Special thanks to our teacher for the incredible help in creating the project.
 
-# Благодарность
+Oleg - [Oleg-Kolosov](https://github.com/Oleg-Kolosov)
 
-Отдельная благодарность нашему преподавателю за невероятную помощь при создании проекта.
-
-Олег - [Oleg-Kolosov](https://github.com/Oleg-Kolosov)
-
-Полезные ссылки:
-- [Учебник по javascript](https://learn.javascript.ru/)
-- [Рекомендации по коммитам](https://github.com/Oleg-Kolosov/Requirements-for-Commit-Names)
-- [Рекомендации по названию функций](https://github.com/Oleg-Kolosov/Recommendations-for-naming-functions)
-- [Рекомендации по правильному написанию css](https://github.com/Oleg-Kolosov/Organization-css-property)
-- [Полезная информация developer.mozilla](https://developer.mozilla.org/en-US/)
-
-<p align="right">(<a href="#top">Вверх</a>)</p>
+<p align="right">(<a href="#top">back to top</a>)</p>
