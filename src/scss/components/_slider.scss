@@ -7,8 +7,8 @@
   min-height: 350px;
   margin: 15px;
 
-  overflow: hidden;
   box-sizing: border-box;
+  overflow: hidden;
   border-radius: 15px;
 
   &--hide{
@@ -65,12 +65,12 @@
 
     width: 45px;
     height: 45px;
-    font-size: 2em;
     margin: 0 10px;
     padding: 10px;
 
+    font-size: 2em;
+    
     color: color.$dark-text-color;
-    background: color.$background-slider-arrow;
     box-sizing: border-box;
     border-radius: 50%;
 
@@ -78,7 +78,7 @@
     transition: .3s linear;
 
     &:hover {
-      background: color.$background-slider-dot;
+      background: color.$btn-bg-light-color;
     }
   }
   &__dots-container {
@@ -92,14 +92,14 @@
       height: 10px;
       margin: 0 5px;
 
-      background: color.$background-slider-dot;
+      background: color.$btn-bg-light-color;
       border-radius: 50%;
       transform: translateY(-10px);
 
       cursor: pointer;
     }
     .slider__dot--active {
-      background: color.$background-slider-dot-active;
+      background: color.$btn-bg-active;
     }
   }
 }
