@@ -2,17 +2,16 @@
 
 .root-app {
   position: relative;
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
 
   min-height: 100vh;
 
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 
-  @include mini-size {
+  @include sm {
     min-width: 400px;
   }
 }
-

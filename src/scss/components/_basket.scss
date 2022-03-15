@@ -17,11 +17,11 @@
 
   overflow-y: auto;
   overflow-x: hidden;
-  border: .5px solid rgb(56, 56, 56);
+  border: 0.5px solid rgb(56, 56, 56);
   border-radius: 20px;
   background-color: color.$bg-secondary-color;
 
-  &--active{
+  &--active {
     display: block;
   }
   &__content {
@@ -38,7 +38,7 @@
   }
   &__title {
     margin-right: 30px;
-    @include text-style(500, 20px, 20px);
+    @include text-style(500, 24px, 20px);
     color: color.$dark-text-color;
   }
   &__clear-all-button {
@@ -52,11 +52,11 @@
     opacity: 0.9;
     background-color: color.$btn-bg-color;
 
-    transition: .3s linear;
+    transition: 0.3s linear;
 
     cursor: pointer;
 
-    &:hover{
+    &:hover {
       opacity: 1;
       color: color.$light-grey-text-color;
     }
@@ -74,7 +74,7 @@
     &__title {
       max-width: 250px;
       margin-right: 10px;
-      @include text-style(300, 18px, 20px);
+      @include text-style(300, 20px, 20px);
     }
     &__increase,
     &__reduce,
@@ -90,16 +90,20 @@
       opacity: 0.9;
       background-color: color.$btn-bg-color;
 
-      transition: .3s linear;
+      transition: 0.3s linear;
 
       cursor: pointer;
 
-      &:hover{
+      &:hover {
         opacity: 1;
         color: color.$light-grey-text-color;
       }
     }
-    &__price,
+    &__price {
+      @include text-style(500, 18px, 20px);
+
+      margin: 0px 5px;
+    }
     &__amount {
       @include text-style(300, 18px, 20px);
 
@@ -112,19 +116,35 @@
     justify-content: space-between;
   }
   &__price-text {
-    @include text-style(500, 18px, 20px);
+    @include text-style(500, 22px, 20px);
     color: color.$dark-text-color;
   }
   &__price-sum {
     margin: 0px 5px;
-    @include text-style(500, 18px, 20px);
+    @include text-style(500, 22px, 20px);
     color: color.$dark-text-color;
   }
+  @include sm {
+    width: 100%;
+    min-height: 40%;
+    max-height: 60%;
+    margin: 0px;
+  }
 
-  @include mini-size {
-    position: absolute;
-    top: 17px;
-    right: 20px;
+  @include md {
+    max-width: 50%;
+    min-height: auto;
+    margin: 10px;
+  }
+
+  @include lg {
+    max-width: 40%;
+    margin: 10px;
+  }
+
+  @include xl {
+    max-width: 40%;
+    margin: 10px;
   }
 }
 .display-block {

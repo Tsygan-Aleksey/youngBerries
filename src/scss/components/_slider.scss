@@ -5,13 +5,13 @@
 
   max-width: 1400px;
   min-height: 350px;
-  margin: 15px;
+  margin: 20px;
 
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 15px;
 
-  &--hide{
+  &--hide {
     display: none;
   }
   &__slide {
@@ -48,7 +48,7 @@
     transition: opacity 0.5s ease;
   }
 
-  .slider:hover &__navigation{
+  .slider:hover &__navigation {
     opacity: 1;
   }
 
@@ -69,25 +69,23 @@
     padding: 10px;
 
     font-size: 2em;
-    
+
     color: color.$dark-text-color;
     box-sizing: border-box;
     border-radius: 50%;
 
     cursor: pointer;
-    transition: .3s linear;
+    transition: 0.3s linear;
 
     &:hover {
       background: color.$btn-bg-light-color;
     }
   }
   &__dots-container {
-
     display: flex;
     justify-content: center;
 
     .slider__dot {
-
       width: 10px;
       height: 10px;
       margin: 0 5px;

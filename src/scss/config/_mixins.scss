@@ -4,26 +4,26 @@
   line-height: $line-height;
 }
 
-@mixin small-size {
-  @media (min-width: 768px) {
-    @content;
-  }
-}
-
-@mixin middle-size {
-  @media (min-width: 992px) {
-    @content;
-  }
-}
-
-@mixin large-size {
+@mixin xl {
   @media (min-width: 1200px) {
     @content;
   }
 }
 
-@mixin mini-size {
-  @media (max-width: 768px){
+@mixin lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: 0px) {
     @content;
   }
 }
