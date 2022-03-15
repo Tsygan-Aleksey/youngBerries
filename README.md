@@ -2,6 +2,8 @@
 
   <h1 align="center">WILDBERRIES</h1>
 
+<p align="center"><a href="https://tsygan-aleksey.github.io/youngBerries/">Watch demo</a></p>
+
   <ol>
     <li>
       <a href="#About-the-project">About the project</a>
@@ -21,6 +23,7 @@
     <li><a href="#acknowledgment">Acknowledgment</a></li>
     
   </ol>
+
 
 ## About the project
 
