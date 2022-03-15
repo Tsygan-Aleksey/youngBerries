@@ -16,6 +16,7 @@
 
   overflow-y: auto;
   overflow-x: hidden;
+  background-color: color.$bg-transparent-color;
 
   &__content {
     position: relative;

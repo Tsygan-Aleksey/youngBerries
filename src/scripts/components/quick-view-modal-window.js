@@ -46,14 +46,23 @@ function openQuickViewWindow() {
   const section = createQuickViewModal(ourCard);
 
   containerCard.append(section);
+  triggerBasket();
 }
 
 function handleQuickViewCard(event) {
   if (event.target.classList.contains("quick-view-modal__close-button")) {
     document.querySelector(".quick-view-modal").remove();
+    triggerBasket();
   } else if (event.target.classList.contains("quick-view-modal__basket")) {
     basket.add();
   }
+}
+
+const triggerBasket = () => {
+  const basket = document.querySelector(".basket-modal");
+  if (basket.classList.contains("basket-modal--active")) {
+    basket.classList.remove("basket-modal--active");
+  } 
 }
 
 export { openQuickViewWindow };
