@@ -6,6 +6,7 @@
   top: 200px;
   left: 0;
   right: 0;
+  z-index: 3;
 
   display: flex;
   align-items: center;
@@ -13,30 +14,31 @@
 
   max-width: 40%;
   min-width: 300px;
-  border-radius: 20px;
-
   margin: auto;
   padding: 0px 20px;
 
-  background: color.$background-toast;
-
-  z-index: 3;
   transform: translateX(200%);
+  border-radius: 20px;
+  background: color.$bg-toast;
+
   transition: width 2s, height 2s, transform 2s;
 
   &__title {
-    color: color.$ligth-text-color;
     @include text-style(300, 20px, 22px);
+    color: color.$ligth-text-color;
   }
 
   &__close-btn {
-    border: none;
-    border-radius: 10px;
     margin-left: 10px;
     padding: 12px;
-    color: color.$ligth-text-color;
+
     @include text-style(300, 20px, 22px);
+
     background: none;
+    border: none;
+    border-radius: 10px;
+    color: color.$ligth-text-color;
+
     cursor: pointer;
   }
 }

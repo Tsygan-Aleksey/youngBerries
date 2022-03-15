@@ -4,7 +4,7 @@
 
   <ol>
     <li>
-      <a href="#About-the-project"># About the project</a>
+      <a href="#About-the-project">About the project</a>
     </li>
     <li><a href="#Installing-and-running-the-project">Installing and running the project</a></li>
     <li>
@@ -22,9 +22,9 @@
     
   </ol>
 
-
 ## About the project
-The "YoungWildberries" project is a simplified version of the well-known international online store WILDBERRIES.
+
+The "youngBerries" project is a simplified version of the well-known international online store WILDBERRIES.
 
 [<img alt="project" src="./readME-image/wildberries.jpg"/>]()
 
@@ -54,53 +54,53 @@ You need to do the following:
 
 [<img alt="header" src="./readME-image/header.jpg"/>]()
 
-1. Site logo.
-2. Search - with which you can easily find the right product. It is implemented in such a way that when you enter the first character, it immediately starts picking up the product.
-3. Cart is a button to open a modal window with products that you choose for yourself and may want to buy.
+1. Website logo.
+2. You can easily find the right product using the search. The search is implemented by entering the first character in the field, after which the picking of the product immediately begins.
+3. Cart is a button for opening a modal window with products that you choose for yourself and may want to buy.
 
-    [<img height="170" alt="basket" width="500" src="./readME-image/basket.jpg"/>]()
+   [<img height="170" alt="basket" width="500" src="./readME-image/basket.jpg"/>]()
 
    Modal window with products:
 
-   - It displays the name of the product, its price, quantity and total amount of all products.
-   - Buttons to increase and decrease the number of products, in addition, you can delete this or that product, or empty the basket completely.
-   - After reloading the site, the data in the basket will remain unchanged, this will allow you to return to the order at any time.
+   - The name of the product, its price, quantity and total amount of all goods are displayed here.
+   - Buttons for increasing and decreasing the number of products, in addition, you can delete a particular product, or clear the cart completely.
+   - The data in the cart will remain unchanged after reloading the site, so you can return to the order at any time.
 
 ## Slider
 
 [<img alt="slider" src="./readME-image/slider.jpg"/>]()
 
-There are buttons on the left and right to switch between slides. At the bottom of the slider in the center there are buttons in the form of dots to quickly switch to the slide you are interested in.
+Buttons for switching between slides are located on the left and right. At the bottom of the slider in the center there are buttons in the form of dots for quick switching to the slide you are interested in.
 
 ## Product cards
 
-Below the slider is the "Bestsellers" section, which contains products.
+Under the slider there is a section "Sales hits", in which the goods are located.
 
-[<img alt="cards" height="" src="./readME-image/cards.jpg" width=""/>]() 
+[<img alt="cards" height="" src="./readME-image/cards.jpg" width=""/>]()
 
-- Each product card has a name, price and image
-- On the card there is a button "Add to cart" to quickly add goods to the cart
-- For more detailed information about the product, you can hover over the card and click the "quick view" button, a modal window will open with more detailed information.
+- Each product card has a name, price and image.
+- There is a "Add to cart" button on the card for quickly adding an item to the cart.
+- For more detailed information about the product, you can hover over the card and click the "Quick view" button, a modal window with more detailed information will open.
 
 ## Quick view window
 
 [<img height="500" width="300" alt="Quick view window" src="./readME-image/quick-view.jpg"/>]()
 
-The quick view window is an enlarged product card with information about it. More product information will be available in the near future.
+The quick view window is an enlarged product card with information on it. In the future, more detailed information about the product will appear in this window.
 
 ## Toast
 
 [<img alt="тост" height="100" width="500" src="./readME-image/toast.jpg"/>]()
 
-A toast was also implemented on the project. Toast is a non-intrusive notification that mimics push notifications. In the project, the toast carries information about who created the site. It appears 15 seconds after the site loads.
+A toast is also implemented in the project. A toast is an unobtrusive notification that mimics push notifications. In the project, the toast carries information about who created the site. The toast notification appears fifteen seconds after the site loads.
 
 In our project we used:
 
 - scss
 - javascript
 - parcel-bundler
-   * parcel-plugin-static-files-copy
-   
+  - parcel-plugin-static-files-copy
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Our team
