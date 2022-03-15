@@ -44,7 +44,7 @@
 
         cursor: pointer;
 
-        &:hover{
+        &:hover {
           background-color: color.$btn-bg-active-light;
           opacity: 1;
         }
@@ -60,11 +60,17 @@
 
         transition: 0.3s ease-in-out;
 
-        @include middle-size {
+        @include sm {
+          display: none;
+        }
+        @include md {
+          display: none;
+        }
+        @include lg {
           display: none;
         }
 
-        @include large-size{
+        @include xl {
           display: block;
         }
       }
@@ -92,7 +98,7 @@
       }
 
       &__quick-view:hover {
-        color: color.$ligth-text-color;
+        color: color.$dark-text-color;
         opacity: 1;
       }
 
@@ -110,13 +116,21 @@
       &__info-price {
         @include text-style(500, 18px, 20px);
       }
-
     }
     .card:hover .card__review {
       opacity: 1;
     }
 
-    @include small-size {
+    @include sm {
+      display: grid;
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 30px;
+
+      min-height: 100%;
+    }
+
+    @include md {
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: repeat(3, 1fr);
@@ -125,7 +139,7 @@
       min-height: 100%;
     }
 
-    @include middle-size {
+    @include lg {
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: repeat(4, 1fr);
@@ -134,21 +148,12 @@
       min-height: 100%;
     }
 
-    @include large-size {
+    @include xl {
       display: grid;
       grid-template-rows: 1fr;
       grid-template-columns: repeat(5, 1fr);
       grid-gap: 30px;
 
-      min-height: 100%;
-    }
-
-    @include mini-size {
-      display: grid;
-      grid-template-rows: 1fr;
-      grid-template-columns: 1fr 1fr;
-      grid-gap: 30px;
-      
       min-height: 100%;
     }
   }

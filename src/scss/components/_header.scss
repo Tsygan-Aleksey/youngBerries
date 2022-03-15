@@ -9,7 +9,6 @@
 
   width: 100%;
   padding: 20px;
-  margin-bottom: 20px;
 
   background: -webkit-gradient(
       linear,
@@ -25,18 +24,19 @@
     color.$bg-primary-color 100%
   );
   &__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
     max-width: 1400px;
-    padding: 0 20px;
     margin: 0 auto;
 
-    @include mini-size {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
+    @include sm {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    @include lg {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
     }
   }
   &__logo {
@@ -45,16 +45,12 @@
     @include text-style(500, 34px, 36px);
 
     color: color.$ligth-text-color;
-
-    @include mini-size {
-      margin-bottom: 20px;
-    }
   }
   &__input {
     width: 100%;
-    padding: 20px 40px 20px 44px;
+    padding: 16px 0px 16px 45px;
     margin: 0px 50px;
-    
+
     @include text-style(300, 20px, 22px);
 
     border: none;
@@ -63,7 +59,7 @@
     color: color.$ligth-text-color;
     background-color: color.$bg-input;
 
-    transition: .3s linear;
+    transition: 0.3s linear;
 
     cursor: pointer;
 
@@ -75,21 +71,26 @@
       color: color.$bg-placeholder;
     }
 
-    &:focus{
+    &:focus {
       text-decoration: none;
       outline: none;
       background: color.$bg-placeholder-focus;
       color: color.$dark-text-color;
     }
 
-    @include mini-size{
-      width: 80%;
+    @include sm {
+      width: 100%;
       margin: 0 auto;
+      margin-top: 20px;
+    }
+    @include lg {
+      width: 80%;
+      margin: 0 20px;
     }
   }
-  
+
   &__basket-button {
-    padding: 18px;
+    padding: 16px;
 
     @include text-style(300, 20px, 22px);
 
@@ -100,7 +101,7 @@
     opacity: 0.7;
     white-space: nowrap;
 
-    transition: .3s linear;
+    transition: 0.3s linear;
 
     cursor: pointer;
 
@@ -110,12 +111,15 @@
       transform: scale(1.05);
     }
 
-    @include mini-size {
-        position: absolute;
-        top: 17px;
-        right: 20px;
-
-        margin-bottom: 20px;       
+    @include sm {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+    }
+    @include lg {
+      position: relative;
+      top: 0;
+      right: 0;
     }
   }
 }
