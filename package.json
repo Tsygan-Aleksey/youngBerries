@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Tsygan-Aleksey/youngBerries.git"
+    "url": "git+https://github.com/Zhibul-Alexander/youngBerries-.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Tsygan-Aleksey/youngBerries/issues"
+    "url": "https://github.com/Zhibul-Alexander/youngBerries/issues"
   },
-  "homepage": "https://github.com/Tsygan-Aleksey/youngBerries#readme",
+  "homepage": "https://github.com/Zhibul-Alexander/youngBerries#readme",
   "devDependencies": {
     "parcel-bundler": "^1.12.5",
     "parcel-plugin-static-files-copy": "^2.6.0",
